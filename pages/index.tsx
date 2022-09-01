@@ -10,6 +10,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Pawtners | Dating For Pets</title>
+        <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
       </Head>
       <div className={styles.Home}>
         <Header />
