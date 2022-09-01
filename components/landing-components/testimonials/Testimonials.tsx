@@ -1,8 +1,9 @@
 import TestimonialComponent from "./testimonial/Testimonial";
+import styles from "./Testimonials.module.css";
 
 const Testimonials: React.FC = () => {
   return (
-    <div>
+    <div className={styles["testimonialsWrapper"]}>
       <TestimonialComponent />
     </div>
   );
