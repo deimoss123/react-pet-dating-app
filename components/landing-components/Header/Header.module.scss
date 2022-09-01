@@ -1,0 +1,99 @@
+$breakpoint-1: 1200px;
+$breakpoint-2: 900px;
+
+.header {
+  padding-inline: 1rem;
+  background-color: #333;
+  nav {
+    height: 100%;
+  }
+
+  ul {
+    height: 100%;
+    display: none;
+    li {
+      cursor: pointer;
+      padding: 0.75rem;
+      color: #fff;
+      font-size: 1.25em;
+      margin-left: 0.5rem;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    cursor: pointer;
+    position: relative;
+    height: 35px;
+    width: 140px;
+
+    // should probably make a white logo instead of using filter
+    filter: brightness(300);
+  }
+
+  .navRight {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .languageSelect {
+    display: none;
+    color: #fff;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 700;
+    gap: 0.5rem;
+  }
+
+  .loginBtn {
+    display: none;
+    padding: 0.5rem 1rem;
+    background-color: #666;
+    border-radius: 999px;
+    font-size: 1em;
+    color: #fff;
+  }
+
+  .hamburgerIcon {
+    display: inline;
+  }
+
+  @media screen and (min-width: $breakpoint-1) {
+    padding-inline: 5%;
+    ul {
+      li {
+        padding: 1rem;
+        font-size: 1.5rem;
+        margin-left: 1rem;
+      }
+    }
+    .languageSelect .loginBtn {
+      font-size: 1.25em;
+    }
+    .logo {
+      height: 50px;
+      width: 200px;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-2) {
+    ul {
+      display: flex;
+    }
+    .hamburgerIcon {
+      display: none;
+    }
+    .languageSelect {
+      display: flex;
+    }
+    .loginBtn {
+      display: inline;
+    }
+  }
+}
