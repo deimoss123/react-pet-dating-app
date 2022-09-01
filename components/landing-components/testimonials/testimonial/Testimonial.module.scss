@@ -2,10 +2,11 @@ $info-text-gray: #505965;
 $border-color: rgb(226, 223, 223);
 
 .testimonialWrapper {
+  margin: 0.5rem;
   .innerWrapper {
     padding: 1.5rem;
     text-align: justify;
-    width: 100%;
+    width: 25rem;
     height: 20rem;
     outline: solid 1px $border-color;
     border-radius: 0.25rem;

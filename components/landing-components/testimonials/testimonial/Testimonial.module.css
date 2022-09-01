@@ -1,7 +1,11 @@
+.testimonialWrapper {
+  margin: 0.5rem;
+}
+
 .testimonialWrapper .innerWrapper {
   padding: 1.5rem;
   text-align: justify;
-  width: 100%;
+  width: 25rem;
   height: 20rem;
   outline: solid 1px #e2dfdf;
   border-radius: 0.25rem;

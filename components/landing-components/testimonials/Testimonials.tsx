@@ -5,6 +5,8 @@ const Testimonials: React.FC = () => {
   return (
     <div className={styles["testimonialsWrapper"]}>
       <TestimonialComponent />
+      <TestimonialComponent />
+      <TestimonialComponent />
     </div>
   );
 };
