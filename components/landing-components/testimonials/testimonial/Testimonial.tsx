@@ -4,7 +4,7 @@ const TestimonialComponent: React.FC<{
   text: string[];
   name: string;
   index: number;
-}> = (props) => {
+}> = props => {
   return (
     <div
       className={`${styles["testimonialWrapper"]} ${
@@ -17,9 +17,7 @@ const TestimonialComponent: React.FC<{
           <span>“</span>
         </div>
         {props.text.map((item, index) => (
-          <blockquote key={new Date().toISOString()}>
-            {props.text[index]}
-          </blockquote>
+          <blockquote key={index}>{props.text[index]}</blockquote>
         ))}
       </div>
     </div>

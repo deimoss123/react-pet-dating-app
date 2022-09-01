@@ -2,21 +2,19 @@ import { useState, useEffect } from "react";
 import TestimonialComponent from "./testimonial/Testimonial";
 import styles from "./Testimonials.module.css";
 
+class Testimonial {
+  id: string;
+  name: string;
+  text: string[];
+
+  constructor(name: string, text: string[]) {
+    this.name = name;
+    this.text = text;
+    this.id = new Date().toISOString();
+  }
+}
 
 const Testimonials: React.FC = () => {
-  class Testimonial {
-    id: string;
-    name: string;
-    text: string[];
-
-    constructor(name: string, text: string[]) {
-      this.name = name;
-      this.text = text;
-      this.id = new Date().toISOString();
-    }
-  }
-
- 
   const arrayOfTestimonials = [
     new Testimonial("Rex & Lassie", [
       "I'm a simple girl living in a farm, he's from a big city and has a fancy job with the police. I was so nervous before our first date! What would we even talk about? But, little did I know, I had no reason to worry, because I was about to meet the love of my life. ❤️",
@@ -34,7 +32,12 @@ const Testimonials: React.FC = () => {
   return (
     <div className={styles["testimonialsWrapper"]}>
       {arrayOfTestimonials.map((item, index) => (
-        <TestimonialComponent index={index} key={item.id} text={item.text} name={item.name} />
+        <TestimonialComponent
+          index={index}
+          key={index}
+          text={item.text}
+          name={item.name}
+        />
       ))}
     </div>
   );
