@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import MainScreen from "../components/landing-components/main-screen/MainScreen";
+import Testimonials from "../components/landing-components/testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
@@ -9,9 +10,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Pawtners | Dating For Pets</title>
       </Head>
-      <MainScreen />
       <div className={styles.Home}>
-        <h1>Pet Dating App</h1>
+        <MainScreen />
+        <Testimonials />
       </div>
     </>
   );
