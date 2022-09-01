@@ -1,0 +1,37 @@
+$info-text-gray: #505965;
+$border-color: rgb(226, 223, 223);
+
+.testimonialWrapper {
+  margin: 0.5rem;
+  .innerWrapper {
+    padding: 1.5rem;
+    text-align: justify;
+    width: 25rem;
+    height: 20rem;
+    outline: solid 1px $border-color;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 4px 1px #888888;
+    .h4Wrapper {
+      display: flex;
+      justify-content: space-between;
+      h4 {
+        font-family: "ProximaNova-Bold";
+        border-bottom: solid 1px $border-color;
+        padding-bottom: 1.5rem;
+        width: 65%;
+      }
+      span {
+        color: $border-color;
+        font-size: 13rem;
+        position: relative;
+        margin-top: -3rem;
+        margin-bottom: -13rem;
+        user-select: none;
+      }
+    }
+    blockquote {
+      padding-top: 1.5rem;
+      color: $info-text-gray;
+    }
+  }
+}

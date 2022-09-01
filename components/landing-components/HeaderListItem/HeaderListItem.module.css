@@ -1,0 +1,40 @@
+.HeaderListItem {
+  color: #fff;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.HeaderListItem:hover {
+  color: #f74f4f;
+}
+
+.HeaderListItem:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+.HeaderListItem::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f74f4f;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+/*# sourceMappingURL=HeaderListItem.module.css.map */

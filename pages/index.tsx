@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useState } from "react";
 import Header from "../components/landing-components/Header/Header";
 import MainScreen from "../components/landing-components/main-screen/MainScreen";
-import SideBar from "../components/landing-components/SideBar/SideBar";
+import Testimonials from "../components/landing-components/testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       <div className={styles.Home}>
         <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
         <MainScreen />
+        <Testimonials />
         <h1>Pet Dating App</h1>
       </div>
     </>

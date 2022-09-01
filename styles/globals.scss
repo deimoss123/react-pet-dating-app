@@ -1,7 +1,17 @@
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../assets/fonts/Proxima\ Nova\ Alt\ Light.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-Bold";
+  src: url("../assets/fonts/Proxima\ Nova\ Alt\ Bold.otf");
+}
+
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "ProximaNova", system-ui, -apple-system, sans-serif, Helvetica, Arial;
 }
 
 a {
