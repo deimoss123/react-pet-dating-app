@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
 import HeaderListItem from "../HeaderListItem/HeaderListItem";
 import SideBar from "../SideBar/SideBar";
@@ -44,7 +45,7 @@ const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
             />
             English
           </button>
-          <button className={styles.loginBtn}>Log In</button>
+          <a className={styles.loginBtn} href={"/recommendations"}>Log In</a>
         </div>
       </nav>
       <SideBar isOpen={sidebarOpen} />
