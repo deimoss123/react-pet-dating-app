@@ -1,0 +1,27 @@
+$hoverColor: #f74f4f;
+
+.HeaderListItem {
+  color: #fff;
+  transition: color 0.3s;
+  position: relative;
+  user-select: none;
+  &:hover {
+    color: $hoverColor;
+    &::after {
+      transform: scaleX(1);
+      transform-origin: bottom center;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $hoverColor;
+    transform-origin: bottom center;
+    transition: transform 0.3s ease-out;
+  }
+}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeaderListItem from "../HeaderListItem/HeaderListItem";
 import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
@@ -9,11 +10,11 @@ const Header: React.FC = () => {
           <Image src="/icons/pawtners-logo.png" alt="logo" layout="fill" />
         </div>
         <ul>
-          <li>Products</li>
-          <li>Learn</li>
-          <li>Safety</li>
-          <li>Support</li>
-          <li>Download</li>
+          <HeaderListItem text="Products" />
+          <HeaderListItem text="Learn" />
+          <HeaderListItem text="Safety" />
+          <HeaderListItem text="Support" />
+          <HeaderListItem text="Download" />
         </ul>
 
         <div className={styles.navRight}>
