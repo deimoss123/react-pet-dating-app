@@ -18,7 +18,6 @@ const Home: NextPage = () => {
         <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
         <MainScreen />
         <Testimonials />
-        <h1>Pet Dating App</h1>
       </div>
     </>
   );

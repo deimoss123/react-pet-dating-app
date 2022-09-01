@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .SideBar {
   background-color: #222;
   position: fixed;
@@ -16,6 +18,9 @@
     li {
       font-size: 2.5em;
     }
+  }
+  @media screen and (min-width: $landing-breakpoint-2) {
+    display: none;
   }
 }
 
