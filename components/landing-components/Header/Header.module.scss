@@ -1,8 +1,7 @@
-$breakpoint-1: 1200px;
-$breakpoint-2: 900px;
-
+@import "./../../../styles/variables.scss";
 .header {
   position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -14,28 +13,18 @@ $breakpoint-2: 900px;
   );
   // background-color: #333;
 
-  nav {
+  .topNav {
     height: 100%;
-  }
-
-  ul {
-    height: 100%;
-    display: none;
-    li {
-      cursor: pointer;
-      padding: 0.75rem;
-      color: #fff;
-      font-size: 1.25em;
-      margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    ul {
+      height: 100%;
+      display: none;
     }
   }
 
-  nav {
-    display: flex;
-    align-items: center;
-  }
-
   .logo {
+    z-index: 1;
     cursor: pointer;
     position: relative;
     height: 35px;
@@ -71,17 +60,17 @@ $breakpoint-2: 900px;
   }
 
   .hamburgerIcon {
+    user-select: none;
+    z-index: 1;
     display: inline;
   }
 
-  @media screen and (min-width: $breakpoint-1) {
+  @media screen and (min-width: $landing-breakpoint-1) {
     padding-inline: 5%;
-    ul {
-      li {
-        padding: 1rem;
-        font-size: 1.5rem;
-        margin-left: 1rem;
-      }
+    .topNav ul li {
+      padding: 1rem;
+      font-size: 1.5rem;
+      margin-left: 1rem;
     }
     .languageSelect .loginBtn {
       font-size: 1.25em;
@@ -92,8 +81,8 @@ $breakpoint-2: 900px;
     }
   }
 
-  @media screen and (min-width: $breakpoint-2) {
-    ul {
+  @media screen and (min-width: $landing-breakpoint-2) {
+    .topNav ul {
       display: flex;
     }
     .hamburgerIcon {

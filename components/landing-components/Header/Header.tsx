@@ -1,11 +1,18 @@
 import Image from "next/image";
+import { Dispatch, SetStateAction } from "react";
 import HeaderListItem from "../HeaderListItem/HeaderListItem";
+import SideBar from "../SideBar/SideBar";
 import styles from "./Header.module.scss";
 
-const Header: React.FC = () => {
+interface Props {
+  sidebarOpen: boolean;
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <header className={styles.header}>
-      <nav>
+      <nav className={styles.topNav}>
         <div className={styles.logo}>
           <Image src="/icons/pawtners-logo.png" alt="logo" layout="fill" />
         </div>
@@ -16,9 +23,11 @@ const Header: React.FC = () => {
           <HeaderListItem text="Support" />
           <HeaderListItem text="Download" />
         </ul>
-
         <div className={styles.navRight}>
-          <button className={styles.hamburgerIcon}>
+          <button
+            className={styles.hamburgerIcon}
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
             <Image
               src="/icons/hamburger-icon.png"
               alt="menu icon"
@@ -38,6 +47,7 @@ const Header: React.FC = () => {
           <button className={styles.loginBtn}>Log In</button>
         </div>
       </nav>
+      <SideBar isOpen={sidebarOpen} />
     </header>
   );
 };

@@ -1,11 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 import Header from "../components/landing-components/Header/Header";
 import MainScreen from "../components/landing-components/main-screen/MainScreen";
 import Testimonials from "../components/landing-components/testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -13,7 +16,8 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
       </Head>
       <div className={styles.Home}>
-        <Header />
+        <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
+        <MainScreen />
         <Testimonials />
       </div>
     </>
