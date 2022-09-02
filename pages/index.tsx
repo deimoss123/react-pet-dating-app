@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
 import Header from "../components/landing-components/Header/Header";
+import AppInfo from "../components/landing-components/AppInfo/AppInfo";
 import LinkTree from "../components/landing-components/LinkTree/LinkTree";
 import MainScreen from "../components/landing-components/MainScreen/MainScreen";
 import Testimonials from "../components/landing-components/Testimonials/Testimonials";
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
         <MainScreen />
         <Testimonials />
         <LinkTree />
+        <AppInfo />
       </div>
     </>
   );

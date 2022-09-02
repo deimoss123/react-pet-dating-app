@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+
+.appInfoWrapper {
+  @extend %lowerLandingContainer;
+  @extend %lowerLandingContainerBorder;
+  div h3 {
+    @extend %h3Heading;
+  }
+  div p {
+    text-align: justify;
+    padding-top: 1rem;
+    color: $info-text-gray;
+  }
+  .bannerContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  @media only screen and (max-width: 300px) {
+    .bannerContainer {
+      flex-direction: column;
+    }
+  }
+}
