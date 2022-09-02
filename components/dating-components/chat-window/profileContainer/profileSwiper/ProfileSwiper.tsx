@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
-import { RecommendedPet, RecommendedPets } from "../../../../../pages/recommendations";
+import { RecommendedPet} from "../../../../../pages/recommendations";
+import { ManageCurrentPetFunctions } from "../ProfileContainer";
 
-const ProfileSwiper= ({id, name, age, type, image, gallery, description}:RecommendedPet) => {
+const ProfileSwiper= ({id, name, age, type, image, gallery, description, nextPet, previousPet}:RecommendedPet & ManageCurrentPetFunctions) => {
+
+
 
 
   useEffect(()=>{
@@ -10,7 +13,9 @@ const ProfileSwiper= ({id, name, age, type, image, gallery, description}:Recomme
 
   return (
     <>
-    <div>Hello World</div>
+    <div>{name}</div>
+    <button onClick={()=>nextPet()}>+</button>
+    <button onClick={()=>previousPet()}>-</button>
     </>
   );
 };
