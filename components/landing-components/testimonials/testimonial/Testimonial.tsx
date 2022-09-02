@@ -1,18 +1,24 @@
 import styles from "./Testimonial.module.css";
 
-const TestimonialComponent: React.FC = () => {
+const TestimonialComponent: React.FC<{
+  text: string[];
+  name: string;
+  index: number;
+}> = props => {
   return (
-    <div className={styles["testimonialWrapper"]}>
+    <div
+      className={`${styles["testimonialWrapper"]} ${
+        props.index > 0 ? styles["conditional"] : ""
+      }`}
+    >
       <div className={styles["innerWrapper"]}>
         <div className={styles["h4Wrapper"]}>
-          <h4>Sidney & Courtney</h4>
+          <h4>{props.name}</h4>
           <span>“</span>
         </div>
-        <blockquote>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab esse
-          voluptatibus minima iste accusamus voluptas adipisci dolores fugiat at
-          praesentium!
-        </blockquote>
+        {props.text.map((item, index) => (
+          <blockquote key={index}>{props.text[index]}</blockquote>
+        ))}
       </div>
     </div>
   );

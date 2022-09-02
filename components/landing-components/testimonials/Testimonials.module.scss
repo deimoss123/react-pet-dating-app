@@ -1,5 +1,7 @@
+@import "../../../styles/variables.scss";
+
 .testimonialsWrapper {
-    padding: 2rem;
+    @extend %lowerLandingContainer;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }

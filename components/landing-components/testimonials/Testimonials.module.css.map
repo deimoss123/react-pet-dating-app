@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,oBAAoB,CAAC;EACjB,OAAO,EAAE,IAAI;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CAC1B",
+    "mappings": "AAEA,ACaA,oBDboB,CCaG;EACnB,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI;EAChB,KAAK,EAVM,OAAO;CAcrB;;AAHG,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK;EDjB5C,ACaA,oBDboB,CCaG;IAKf,MAAM,EAAE,SAAS;GAExB;;;ADpBD,AAAA,oBAAoB,CAAC;EAEjB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;CACjC",
     "sources": [
-        "Testimonials.module.scss"
+        "Testimonials.module.scss",
+        "../../../styles/variables.scss"
     ],
     "names": [],
     "file": "Testimonials.module.css"
