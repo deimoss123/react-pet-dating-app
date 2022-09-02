@@ -5,7 +5,7 @@ import Header from "../components/landing-components/Header/Header";
 import AppInfo from "../components/landing-components/AppInfo/AppInfo";
 import LinkTree from "../components/landing-components/LinkTree/LinkTree";
 import MainScreen from "../components/landing-components/MainScreen/MainScreen";
-import Testimonials from "../components/landing-components/Testimonials/Testimonials";
+import Testimonials from "../components/landing-components/testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
 import Footer from "../components/reusable-components/Footer/Footer";
 
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Pawtners | Dating For Pets</title>
-        <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <div className={styles.Home}>
         <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
