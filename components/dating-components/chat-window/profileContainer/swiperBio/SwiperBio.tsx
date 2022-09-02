@@ -1,5 +1,5 @@
 import React from "react";
-import { RecommendedPet, RecommendedPets } from "../../../../../pages/recommendations";
+import { RecommendedPet, RecommendedPets } from "../../../../../pages/dating";
 import { PetBio } from "../profileSwiper";
 
 const SwiperBio = ({name, age, type}: PetBio) => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { RecommendedPet } from "../../../../../pages/recommendations";
+import { RecommendedPet } from "../../../../../pages/dating";
 import GalleryButtons from "../galleryButtons/GalleryButtons";
 import { ManageCurrentView } from "../ProfileContainer";
 import { useSwipeable } from "react-swipeable";

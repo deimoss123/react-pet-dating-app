@@ -3,7 +3,7 @@ import { type } from "os";
 import React, { useState } from "react";
 import ProfileContainer from "../components/dating-components/chat-window/profileContainer/ProfileContainer";
 
-const Recommendations: NextPage = () => {
+const Dating: NextPage = () => {
   
   const [recommendedPets, setRecommendedPets] = useState<RecommendedPets>({
     pets: [
@@ -66,4 +66,4 @@ export type Owners = {
   owner: boolean, 
 }
 
-export default Recommendations;
+export default Dating;

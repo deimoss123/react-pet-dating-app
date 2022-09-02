@@ -3,7 +3,7 @@ import {
   Owners,
   RecommendedPet,
   RecommendedPets,
-} from "../../../../pages/recommendations";
+} from "../../../../pages/dating";
 import ProfileSwiper from "./profileSwiper/ProfileSwiper";
 
 export type ManageCurrentView= {
