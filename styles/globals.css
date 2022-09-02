@@ -13,6 +13,11 @@
   src: url("../public/fonts/ProximaNova-Regular.otf");
 }
 
+@font-face {
+  font-family: "ProximaNova-Black";
+  src: url("../public/fonts/Proxima Nova Black.otf");
+}
+
 html,
 body {
   font-family: "ProximaNova", system-ui, -apple-system, sans-serif, Helvetica, Arial;
@@ -39,5 +44,10 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
 }
 /*# sourceMappingURL=globals.css.map */
