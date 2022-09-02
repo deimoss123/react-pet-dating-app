@@ -1,0 +1,89 @@
+
+.mainContainer{
+    height: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.chatBox{
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    height: 100vh;
+    min-height: 100%;
+    overflow: auto;
+    max-height: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to right, rgb(255, 197, 207) , rgb(255, 205, 255));
+}
+.inputField{
+    width: 90%;
+    text-align: center;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.chatMsgLeft {
+    width: fit-content;
+    max-width: 30%;
+    background-color: #f1f0f0;
+    border-radius: 20px 20px 20px 3px; 
+    padding: 15px;
+    margin-bottom: 20px;
+    word-break: break-all;
+    margin: 20px;
+}
+
+.chatMsgRight {
+    width: fit-content;
+    height: auto;
+    background-color: rgb(223, 43, 73);
+    border-radius: 20px 20px 3px 20px;
+    padding: 15px;
+    max-width: 30%;
+    word-break: break-all;
+    color: white;
+    margin-bottom: 20px;
+    margin: 20px;
+}
+
+.chatMsgLeftContainer{
+    display: flex;
+    justify-content: flex-start;
+}
+.chatMsgRightContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+.msgContainer{
+    width: 100%;
+    padding: 0 40px 0 40px;
+}
+
+.userContainer{
+    background-color: white;
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.petImg{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 3px;
+    border: 3px solid white;
+}

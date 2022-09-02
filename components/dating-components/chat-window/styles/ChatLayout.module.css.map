@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,WAAW,CAAA;EACP,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,KAAK;EACjB,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,GAAG;EACV,QAAQ,EAAE,IAAI;EACd,UAAU,EAAE,IAAI,CAAC,GAAG,CAAC,IAAI,CAAC,kBAAkB;CAC/C",
-    "sources": [
-        "ChatLayout.module.scss"
-    ],
-    "names": [],
-    "file": "ChatLayout.module.css"
-}
+{"version":3,"sources":["ChatLayout.module.scss","ChatLayout.module.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,iBAAA;EACA,iBAAA;EACA,UAAA;EACA,cAAA;EACA,4CAAA;ACCJ","file":"ChatLayout.module.css"}
