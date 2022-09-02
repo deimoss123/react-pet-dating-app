@@ -1,21 +1,42 @@
 import React, { useEffect } from "react";
-import { RecommendedPet} from "../../../../../pages/recommendations";
+import { RecommendedPet } from "../../../../../pages/recommendations";
 import { ManageCurrentPetFunctions } from "../ProfileContainer";
+import ProfileInfo from "../profileInfo/ProfileInfo";
+import SwiperBio from "../swiperBio/SwiperBio";
+import SwiperButtons from "../swiperButtons/SwiperButtons";
 
-const ProfileSwiper= ({id, name, age, type, image, gallery, description, nextPet, previousPet}:RecommendedPet & ManageCurrentPetFunctions) => {
+export interface PetBio {
+  name: string;
+  age: string;
+  type: string;
+}
 
+export interface PetInfo {
+  info: string;
+}
 
-
-
-  useEffect(()=>{
-    console.log(name)
-  },[name])
+const ProfileSwiper = ({
+  id,
+  name,
+  age,
+  type,
+  image,
+  gallery,
+  description,
+  nextPet,
+  previousPet,
+}: RecommendedPet & ManageCurrentPetFunctions) => {
+  useEffect(() => {
+    console.log(name);
+  }, [name]);
 
   return (
     <>
-    <div>{name}</div>
-    <button onClick={()=>nextPet()}>+</button>
-    <button onClick={()=>previousPet()}>-</button>
+      <SwiperBio name={name} age={age} type={type} />
+      <ProfileInfo info={description}/>
+      <div></div>
+      <SwiperButtons nextPet={nextPet} previousPet={previousPet} />
+
     </>
   );
 };

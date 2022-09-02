@@ -1,15 +1,13 @@
-import React, { useEffect } from "react";
-import { RecommendedPets } from "../../../../../pages/recommendations";
+import React from "react";
+import { RecommendedPet, RecommendedPets } from "../../../../../pages/recommendations";
+import { PetBio } from "../profileSwiper";
 
-const SwiperBio= ({pets}:RecommendedPets) => {
-
-  useEffect(()=>{
-    console.log(pets)
-  },[pets])
-
+const SwiperBio = ({name, age, type}: PetBio) => {
   return (
     <>
-    <div>Hello World</div>
+      <div>{name}</div>
+      <div>{age}</div>
+      <div>{type}</div>
     </>
   );
 };

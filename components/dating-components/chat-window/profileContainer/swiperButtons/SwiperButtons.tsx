@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { RecommendedPets } from "../../../../../pages/recommendations";
+import React, { useEffect } from "react";
+import { ManageCurrentPetFunctions } from "../ProfileContainer";
 
-const SwiperButtons= ({pets}:RecommendedPets) => {
-
-  useEffect(()=>{
-    console.log(pets)
-  },[pets])
-
+const SwiperButtons = ({ nextPet, previousPet }: ManageCurrentPetFunctions) => {
   return (
     <>
-    <div>Hello World</div>
+      <button onClick={() => nextPet()}>Like</button>
+      <button onClick={() => nextPet()}>Dislike</button>
+      <button onClick={() => previousPet()}>Last</button>
     </>
   );
 };
