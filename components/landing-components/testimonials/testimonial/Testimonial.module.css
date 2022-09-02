@@ -1,11 +1,7 @@
-.testimonialWrapper {
-  margin: 0.5rem;
-}
-
 .testimonialWrapper .innerWrapper {
   padding: 1.5rem;
   text-align: justify;
-  width: 30vw;
+  width: 29vw;
   height: 20rem;
   outline: solid 1px #e2dfdf;
   border-radius: 0.25rem;
@@ -26,7 +22,7 @@
   font-family: "ProximaNova-Bold";
   border-bottom: solid 1px #e2dfdf;
   padding-bottom: 1.5rem;
-  width: 65%;
+  width: 70%;
   font-size: 1.4em;
 }
 
@@ -59,7 +55,7 @@
   }
   .testimonialWrapper .innerWrapper {
     width: 100%;
-    height: 15rem;
+    height: 16rem;
   }
 }
 

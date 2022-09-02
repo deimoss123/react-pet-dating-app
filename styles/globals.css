@@ -1,11 +1,16 @@
 @font-face {
   font-family: "ProximaNova";
-  src: url("../assets/fonts/Proxima Nova Alt Light.otf");
+  src: url("../public/fonts/Proxima Nova Alt Light.otf");
 }
 
 @font-face {
   font-family: "ProximaNova-Bold";
-  src: url("../assets/fonts/Proxima Nova Alt Bold.otf");
+  src: url("../public/fonts/Proxima Nova Alt Bold.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-Reg";
+  src: url("../public/fonts/ProximaNova-Regular.otf");
 }
 
 html,

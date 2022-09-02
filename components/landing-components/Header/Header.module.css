@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -8,24 +9,8 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-.header nav {
+.header .topNav {
   height: 100%;
-}
-
-.header ul {
-  height: 100%;
-  display: none;
-}
-
-.header ul li {
-  cursor: pointer;
-  padding: 0.75rem;
-  color: #fff;
-  font-size: 1.25em;
-  margin-left: 0.5rem;
-}
-
-.header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +19,13 @@
           align-items: center;
 }
 
+.header .topNav ul {
+  height: 100%;
+  display: none;
+}
+
 .header .logo {
+  z-index: 1;
   cursor: pointer;
   position: relative;
   height: 35px;
@@ -75,6 +66,11 @@
 }
 
 .header .hamburgerIcon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 1;
   display: inline;
 }
 
@@ -82,7 +78,7 @@
   .header {
     padding-inline: 5%;
   }
-  .header ul li {
+  .header .topNav ul li {
     padding: 1rem;
     font-size: 1.5rem;
     margin-left: 1rem;
@@ -97,7 +93,7 @@
 }
 
 @media screen and (min-width: 900px) {
-  .header ul {
+  .header .topNav ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

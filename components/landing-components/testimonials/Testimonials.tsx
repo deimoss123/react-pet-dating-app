@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import TestimonialComponent from "./testimonial/Testimonial";
+import TestimonialComponent from "./Testimonial/Testimonial";
 import styles from "./Testimonials.module.css";
 
 class Testimonial {

@@ -1,12 +1,10 @@
-$info-text-gray: #505965;
-$border-color: rgb(226, 223, 223);
+@import "../../../../styles/variables.scss";
 
 .testimonialWrapper {
-  margin: 0.5rem;
   .innerWrapper {
     padding: 1.5rem;
     text-align: justify;
-    width: 30vw;
+    width: 29vw;
     height: 20rem;
     outline: solid 1px $border-color;
     border-radius: 0.25rem;
@@ -18,7 +16,7 @@ $border-color: rgb(226, 223, 223);
         font-family: "ProximaNova-Bold";
         border-bottom: solid 1px $border-color;
         padding-bottom: 1.5rem;
-        width: 65%;
+        width: 70%;
         font-size: 1.4em;
       }
       span {
@@ -48,7 +46,7 @@ $border-color: rgb(226, 223, 223);
     }
     .innerWrapper {
       width: 100%;
-      height: 15rem;
+      height: 16rem;
     }
   }
 

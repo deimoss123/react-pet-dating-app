@@ -2,8 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
 import Header from "../components/landing-components/Header/Header";
-import MainScreen from "../components/landing-components/main-screen/MainScreen";
-import Testimonials from "../components/landing-components/testimonials/Testimonials";
+import LinkTree from "../components/landing-components/LinkTree/LinkTree";
+import MainScreen from "../components/landing-components/MainScreen/MainScreen";
+import Testimonials from "../components/landing-components/Testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
         <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
         <MainScreen />
         <Testimonials />
+        <LinkTree />
       </div>
     </>
   );
