@@ -7,10 +7,10 @@ const AppInfo: React.FC = () => {
       <div className={styles["bannerContainer"]}>
         <h3>GET THE APP!</h3>
         <button>
-          <Image width="100px" height="40px" src="/icons/appstore.png" />
+          <Image width="120px" height="40px" src="/icons/appstore.png" />
         </button>
         <button>
-          <Image width="110px" height="60px" src="/icons/googleplay.png" />
+          <Image width="130px" height="60px" src="/icons/googleplay.png" />
         </button>
       </div>
       <div>
