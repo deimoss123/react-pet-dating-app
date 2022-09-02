@@ -15,7 +15,8 @@
 
 html,
 body {
-  font-family: "ProximaNova", system-ui, -apple-system, sans-serif, Helvetica, Arial;
+  font-family: "ProximaNova", system-ui, -apple-system, sans-serif, Helvetica,
+    Arial;
 }
 
 a {
@@ -38,4 +39,9 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
 }

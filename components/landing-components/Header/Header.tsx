@@ -7,9 +7,14 @@ import styles from "./Header.module.scss";
 interface Props {
   sidebarOpen: boolean;
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
+const Header: React.FC<Props> = ({
+  sidebarOpen,
+  setSidebarOpen,
+  setModalOpen,
+}) => {
   return (
     <header className={styles.header}>
       <nav className={styles.topNav}>
@@ -44,7 +49,12 @@ const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
             />
             English
           </button>
-          <button className={styles.loginBtn}>Log In</button>
+          <button
+            className={styles.loginBtn}
+            onClick={() => setModalOpen(true)}
+          >
+            Log In
+          </button>
         </div>
       </nav>
       <SideBar isOpen={sidebarOpen} />
