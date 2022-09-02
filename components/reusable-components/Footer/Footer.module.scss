@@ -1,0 +1,38 @@
+@import "../../../styles/variables.scss";
+
+.footerContainer {
+    @extend %lowerLandingContainer;
+    color: $info-text-gray;
+    font-size: 14px;
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+        cursor: pointer;
+        display: inline;
+        margin-right: 1rem;
+        &:hover {
+            color: $red-accent;
+        }
+        &:after {
+            content: "/";
+            color: gray;
+            padding-left: 1rem;
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0;
+        ul {
+            text-align: center;
+            li {
+                font-size: 11px;
+            }
+        }
+    }
+}

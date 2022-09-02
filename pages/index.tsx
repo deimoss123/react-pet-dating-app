@@ -7,6 +7,7 @@ import LinkTree from "../components/landing-components/LinkTree/LinkTree";
 import MainScreen from "../components/landing-components/MainScreen/MainScreen";
 import Testimonials from "../components/landing-components/Testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
+import Footer from "../components/reusable-components/Footer/Footer";
 
 const Home: NextPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
         <Testimonials />
         <LinkTree />
         <AppInfo />
+        <Footer />
       </div>
     </>
   );
