@@ -1,0 +1,151 @@
+.SignupForm {
+  padding: 1.5rem 2rem;
+  background-color: #df2b49;
+  border-radius: 2rem;
+  color: #fff;
+}
+
+.SignupForm h2 {
+  font-size: 2em;
+  margin-bottom: 1.5rem;
+}
+
+.SignupForm .inputFields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.SignupForm .inputFields .textInput {
+  color: #fff;
+  font-size: 1em;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.SignupForm .inputFields .textInput:focus, .SignupForm .inputFields .textInput:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.SignupForm .inputFields label {
+  font-size: 1.25em;
+}
+
+.SignupForm .selectWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.SignupForm .selectWrapper h3 {
+  font-size: 1.25em;
+  margin-bottom: 0.75rem;
+}
+
+.SignupForm .selectWrapper label {
+  margin-left: 0.75rem;
+}
+
+.SignupForm .selectWrapper input,
+.SignupForm .selectWrapper label {
+  cursor: pointer;
+}
+
+.SignupForm .selectWrapper .genderWrapper,
+.SignupForm .selectWrapper .interestsWrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.SignupForm .selectWrapper .genderWrapper div,
+.SignupForm .selectWrapper .interestsWrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.SignupForm .selectWrapper .genderWrapper input,
+.SignupForm .selectWrapper .interestsWrapper input {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.SignupForm .selectWrapper .genderWrapper input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.SignupForm .selectWrapper .genderWrapper input:checked {
+  -webkit-box-shadow: inset 0 0 0 0.25rem #fff;
+          box-shadow: inset 0 0 0 0.25rem #fff;
+}
+
+.SignupForm .btnRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.SignupForm .btnRow .cancelBtn {
+  font-weight: 200;
+}
+
+.SignupForm .btnRow .signupBtn {
+  font-weight: 700;
+}
+
+.SignupForm .btnRow .cancelBtn,
+.SignupForm .btnRow .signupBtn {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5em;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.SignupForm .btnRow .cancelBtn:hover,
+.SignupForm .btnRow .signupBtn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (min-width: 900px) {
+  .SignupForm {
+    padding: 3rem 4rem;
+  }
+}
+/*# sourceMappingURL=SignupForm.module.css.map */

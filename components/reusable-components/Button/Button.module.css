@@ -17,4 +17,23 @@
   transition: 0.5s;
   margin-top: -10px;
 }
+
+.logIn {
+  display: none;
+  font-size: 20px;
+  padding: 0.4em 1.2em;
+}
+
+.logIn:hover {
+  outline: solid 2px #df2b49;
+  background-image: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 900px) {
+  .logIn {
+    display: inline;
+  }
+}
 /*# sourceMappingURL=Button.module.css.map */

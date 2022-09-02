@@ -8,9 +8,12 @@ import MainScreen from "../components/landing-components/MainScreen/MainScreen";
 import Testimonials from "../components/landing-components/Testimonials/Testimonials";
 import styles from "../styles/Home.module.scss";
 import Footer from "../components/reusable-components/Footer/Footer";
+import Modal from "../components/reusable-components/Footer/Modal/Modal";
+import SignupForm from "../components/landing-components/SignupForm/SignupForm";
 
 const Home: NextPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -19,13 +22,20 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <div className={styles.Home}>
-        <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
+        <Header
+          setSidebarOpen={setSidebarOpen}
+          sidebarOpen={sidebarOpen}
+          setModalOpen={setIsModalOpen}
+        />
         <MainScreen />
         <Testimonials />
         <LinkTree />
         <AppInfo />
         <Footer />
       </div>
+      <Modal isOpen={isModalOpen} setModalOpen={setIsModalOpen}>
+        <SignupForm setModalOpen={setIsModalOpen} />
+      </Modal>
     </>
   );
 };

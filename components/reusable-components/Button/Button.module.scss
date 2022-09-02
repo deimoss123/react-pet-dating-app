@@ -18,3 +18,17 @@
   transition: 0.5s;
   margin-top: -10px;
 }
+
+.logIn {
+  display: none;
+  font-size: 20px;
+  padding: 0.4em 1.2em;
+  &:hover {
+  outline: solid 2px $red-accent;
+  background-image: none;
+  transition: 0.3s;
+  }
+  @media screen and (min-width: $landing-breakpoint-2) {
+    display: inline;
+  }
+}
