@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import HeaderListItem from "../HeaderListItem/HeaderListItem";
 import SideBar from "../SideBar/SideBar";
 import styles from "./Header.module.scss";
+import Button from "../../reusable-components/Button/Button";
 
 interface Props {
   sidebarOpen: boolean;
@@ -49,12 +50,9 @@ const Header: React.FC<Props> = ({
             />
             English
           </button>
-          <button
-            className={styles.loginBtn}
-            onClick={() => setModalOpen(true)}
-          >
+          <Button class="logIn" onClick={() => setModalOpen(true)}>
             Log In
-          </button>
+          </Button>
         </div>
       </nav>
       <SideBar isOpen={sidebarOpen} />
