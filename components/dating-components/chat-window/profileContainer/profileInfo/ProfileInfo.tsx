@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PetInfo } from "../profileSwiper";
 
 interface InfoButtonProperties {
@@ -6,12 +6,13 @@ interface InfoButtonProperties {
   setIsDescriptionOpen: Function
 }
 
-const ProfileInfo = ({info}: PetInfo) => {
-  const[isDescriptionOpen, setIsDescriptionOpen] = useState(false)
+const ProfileInfo = ({isDescriptionOpen, setIsDescriptionOpen}: InfoButtonProperties) => {
+
+
   if (isDescriptionOpen) {
-    return(<div> <div>{info}</div>
-    <ToggleInfoButton isDescriptionOpen={isDescriptionOpen} setIsDescriptionOpen={setIsDescriptionOpen}/>
-    </div>)
+    return(
+    <ToggleInfoButton isDescriptionOpen={isDescriptionOpen} setIsDescriptionOpen={setIsDescriptionOpen}/>)
+    
   }
     return <ToggleInfoButton isDescriptionOpen={isDescriptionOpen} setIsDescriptionOpen={setIsDescriptionOpen}/>;
 };

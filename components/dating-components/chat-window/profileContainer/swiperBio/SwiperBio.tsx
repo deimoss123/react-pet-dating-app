@@ -5,9 +5,9 @@ import { PetBio } from "../profileSwiper";
 const SwiperBio = ({name, age, type}: PetBio) => {
   return (
     <>
-      <div>{name}</div>
-      <div>{age}</div>
-      <div>{type}</div>
+      <div style={{"userSelect": "none"}}>{name}</div>
+      <div style={{"userSelect": "none"}}>{age}</div>
+      <div style={{"userSelect": "none"}}>{type}</div>
     </>
   );
 };

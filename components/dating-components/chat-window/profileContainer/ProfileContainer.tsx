@@ -6,9 +6,9 @@ import {
 } from "../../../../pages/recommendations";
 import ProfileSwiper from "./profileSwiper/ProfileSwiper";
 
-export type ManageCurrentPetFunctions= {
-  nextPet: Function,
-  previousPet: Function
+export type ManageCurrentView= {
+  next: Function,
+  previous: Function
 }
 
 const ProfileContainer = ({ pets }: RecommendedPets) => {
@@ -48,8 +48,8 @@ const ProfileContainer = ({ pets }: RecommendedPets) => {
         image={image}
         gallery={gallery}
         description={description} 
-        nextPet={nextPet} 
-        previousPet={previousPet}      />
+        next={nextPet} 
+        previous={previousPet}      />
     </>
   );
 };

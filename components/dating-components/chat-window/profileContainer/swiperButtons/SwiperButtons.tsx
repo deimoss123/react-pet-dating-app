@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { ManageCurrentPetFunctions } from "../ProfileContainer";
+import { ManageCurrentView } from "../ProfileContainer";
 
-const SwiperButtons = ({ nextPet, previousPet }: ManageCurrentPetFunctions) => {
+const SwiperButtons = ({ next, previous }: ManageCurrentView) => {
   return (
     <>
-      <button onClick={() => nextPet()}>Like</button>
-      <button onClick={() => nextPet()}>Dislike</button>
-      <button onClick={() => previousPet()}>Last</button>
+      <button onClick={() => next()}>Like</button>
+      <button onClick={() => next()}>Dislike</button>
+      <button onClick={() => previous()}>Last</button>
     </>
   );
 };

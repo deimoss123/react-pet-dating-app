@@ -14,7 +14,7 @@ const Recommendations: NextPage = () => {
         type: "dog",
         image:
           "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        gallery: [],
+        gallery: ["/photos/ami.jpeg", "/photos/harrisons.jpg"],
         description: "I am a dog, Moooooooooooooooooooooooooooooon",
       },
       {
@@ -24,7 +24,7 @@ const Recommendations: NextPage = () => {
         type: "cat",
         image:
           "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        gallery: [],
+        gallery: ["/photos/arcijs.jpg", "/photos/zemene.jpg"],
         description:"I am a cat, my name is Garp"
       },
       {
@@ -34,7 +34,7 @@ const Recommendations: NextPage = () => {
         type: "dog",
         image:
           "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        gallery: [],
+        gallery: ["/photos/freija.png", "/photos/harrisons.jpg"],
         description: "I am a dog, my name is Bella"
       },
     ],
