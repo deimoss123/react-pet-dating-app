@@ -1,4 +1,5 @@
 import { Key, useEffect, useState } from "react";
+import styles from "./styles/ChatWindow.module.scss";
 import axios from "axios";
 
 interface Response {
@@ -61,16 +62,18 @@ const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
 
   return (
     <>
-    <div>
-        {chatBoxMsg.map(msg => (
-            <div className="chat-msg" key={msg.id as Key}>
-                <div>
-                    {msg.msgText}
-                </div>  
-            </div>    
-        ))}
+    <div className={styles.chatBox}>
+        <div className={styles.msgContainer}>
+            {chatBoxMsg.map(msg => (
+                <div key={msg.id as Key} className= {msg.type === 0 ? styles.chatMsgLeftContainer : styles.chatMsgRightContainer}>
+                    <div className={msg.type === 0 ? styles.chatMsgLeft : styles.chatMsgRight}>
+                        {msg.msgText}
+                    </div>  
+                </div>    
+            ))} 
+        </div>
+    <input type="text" placeholder="Message" name="" id="" className={styles.inputField} onKeyDown={handleKeyDown} />
     </div>
-    <input type="text" name="" id="" onKeyDown={handleKeyDown} />
     </>
   )
 }
