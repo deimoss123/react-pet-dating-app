@@ -1,15 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { Owners, RecommendedPet, RecommendedPets } from "../../../../pages/recommendations";
+import {
+  Owners,
+  RecommendedPet,
+  RecommendedPets,
+} from "../../../../pages/recommendations";
+import ProfileSwiper from "./profileSwiper/ProfileSwiper";
 
-const ProfileContainer= ({pets}:RecommendedPets) => {
+const ProfileContainer = ({ pets }: RecommendedPets) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentPet, setCurrentPet] = useState(pets[currentIndex]);
 
-  useEffect(()=>{
-    console.log(pets)
-  },[pets])
+  useEffect(() => {
+    console.log(pets);
+  }, [pets]);
+
+  const nextPet = () => {
+    const nextIndex = currentIndex === pets.length - 1 ? 0 : currentIndex + 1;
+    const nextPet = pets[nextIndex];
+    setCurrentPet(nextPet);
+    setCurrentIndex(nextIndex);
+  };
+
+  const previousPet = () => {
+    const previousIndex =
+      currentIndex === 0 ? pets.length - 1 : currentIndex - 1;
+    const previousPet = pets[previousIndex];
+    setCurrentPet(previousPet);
+    setCurrentIndex(previousIndex);
+  };
+
+  const { id, name, age, type, image, gallery, description } = currentPet;
 
   return (
     <>
-    <div>Hello World</div>
+      <ProfileSwiper
+        id={id}
+        name={name}
+        age={age}
+        type={type}
+        image={image}
+        gallery={gallery}
+        description={description}
+      />
     </>
   );
 };

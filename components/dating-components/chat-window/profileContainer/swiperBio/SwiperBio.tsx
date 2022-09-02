@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Owners, RecommendedPet, RecommendedPets } from "../../../../pages/SwiperBio";
+import React, { useEffect } from "react";
+import { RecommendedPets } from "../../../../../pages/recommendations";
 
 const SwiperBio= ({pets}:RecommendedPets) => {
 
