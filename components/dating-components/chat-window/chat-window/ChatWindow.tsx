@@ -1,6 +1,7 @@
 import { Key, useEffect, useState } from "react";
 import styles from "./styles/ChatWindow.module.scss";
 import axios from "axios";
+import Heading from "./Heading";
 
 interface Response {
     "postId": Number;
@@ -16,9 +17,20 @@ interface chatBoxMsg {
     msgText: String;
 }
 
+interface Props {
+    currentChat: Number;
+    likedPets: {
+        id: number;
+        name: string;
+        age: string;
+        type: string;
+        image: string;
+    }[];
+}
+
 interface Response extends Array<Response>{}
 
-const ChatWindow: React.FC = () => {
+const ChatWindow: React.FC<Props> = ({likedPets, currentChat}) => {
     const [messages, setMessages] = useState<String[]>([]);
     const [chatBoxMsg, setChatBoxMsg] = useState<chatBoxMsg[]>([]);
 
@@ -62,17 +74,20 @@ const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
 
   return (
     <>
-    <div className={styles.chatBox}>
+    <div className={styles.mainContainer}>
+        <Heading likedPets={likedPets} currentChat={currentChat}/>    
+        <div className={styles.chatBox}>
         <div className={styles.msgContainer}>
-            {chatBoxMsg.map(msg => (
-                <div key={msg.id as Key} className= {msg.type === 0 ? styles.chatMsgLeftContainer : styles.chatMsgRightContainer}>
-                    <div className={msg.type === 0 ? styles.chatMsgLeft : styles.chatMsgRight}>
-                        {msg.msgText}
-                    </div>  
-                </div>    
-            ))} 
+                {chatBoxMsg.map(msg => (
+                    <div key={msg.id as Key} className= {msg.type === 0 ? styles.chatMsgLeftContainer : styles.chatMsgRightContainer}>
+                        <div className={msg.type === 0 ? styles.chatMsgLeft : styles.chatMsgRight}>
+                            {msg.msgText}
+                        </div>  
+                    </div>    
+                ))} 
+            </div>
+        <input type="text" placeholder="Type a message..." name="" id="" className={styles.inputField} onKeyDown={handleKeyDown} />
         </div>
-    <input type="text" placeholder="Message" name="" id="" className={styles.inputField} onKeyDown={handleKeyDown} />
     </div>
     </>
   )
