@@ -11,6 +11,7 @@ import Footer from "../components/reusable-components/Footer/Footer";
 import Modal from "../components/reusable-components/Modal/Modal";
 import SignupForm from "../components/landing-components/SignupForm/SignupForm";
 import LoginForm from "../components/landing-components/LoginForm/LoginForm";
+import { AnimatePresence } from "framer-motion";
 
 const Home: NextPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -35,12 +36,22 @@ const Home: NextPage = () => {
         <AppInfo />
         <Footer />
       </div>
-      <Modal isOpen={isSignupModalOpen} setModalOpen={setSignupModalOpen}>
-        <SignupForm setModalOpen={setSignupModalOpen} />
-      </Modal>
-      <Modal isOpen={isLoginModalOpen} setModalOpen={setLoginModalOpen}>
-        <LoginForm setModalOpen={setLoginModalOpen} />
-      </Modal>
+      <AnimatePresence
+        initial={false}
+        exitBeforeEnter={true}
+        onExitComplete={() => null}
+      >
+        {isSignupModalOpen && (
+          <Modal setModalOpen={setSignupModalOpen}>
+            <SignupForm setModalOpen={setSignupModalOpen} />
+          </Modal>
+        )}
+        {isLoginModalOpen && (
+          <Modal setModalOpen={setLoginModalOpen}>
+            <LoginForm setModalOpen={setLoginModalOpen} />
+          </Modal>
+        )}
+      </AnimatePresence>
     </>
   );
 };

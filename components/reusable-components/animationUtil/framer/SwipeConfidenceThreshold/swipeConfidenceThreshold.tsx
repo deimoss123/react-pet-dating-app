@@ -1,0 +1,1 @@
+export const swipeConfidenceThreshold = 10000;

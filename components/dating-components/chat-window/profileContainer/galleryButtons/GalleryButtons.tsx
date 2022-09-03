@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import { ManageCurrentView } from "../ProfileContainer";
 
-const GalleryButtons = ({ next, previous }: ManageCurrentView) => {
+export const GalleryButtons = ({ next, previous }: ManageCurrentView) => {
   return (
     <>
-      <button onClick={() => next()}>Next</button>
-      <button onClick={() => previous()}>Previous</button>
+      <div className={"GalleryButtons"}>
+        <div className="next" onClick={() => next()}>
+          {">"}
+        </div>
+        <div className="previous" onClick={() => previous()}>
+          {"<"}
+        </div>
+      </div>
     </>
   );
 };
 
-export default GalleryButtons;

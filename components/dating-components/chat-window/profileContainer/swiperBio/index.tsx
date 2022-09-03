@@ -1,2 +1,2 @@
-export * from './SwiperBio'
+export {SwiperBio} from './SwiperBio'
  

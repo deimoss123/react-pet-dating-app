@@ -1,2 +1,2 @@
-export * from './GalleryButtons'
+export {GalleryButtons} from './GalleryButtons'
  
