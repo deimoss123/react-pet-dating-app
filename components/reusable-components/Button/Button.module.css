@@ -9,6 +9,13 @@
   border-radius: 30px;
 }
 
+@media only screen and (max-width: 600px) {
+  .hover {
+    padding: 0.4em 2em;
+    font-size: 5vw;
+  }
+}
+
 .hover:hover {
   border-top: 5px solid #df2b49;
   border-bottom: 5px solid #e2520e;
