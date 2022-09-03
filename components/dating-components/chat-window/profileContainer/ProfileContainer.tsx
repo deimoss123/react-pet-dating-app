@@ -52,6 +52,7 @@ export const ProfileContainer = ({ pets }: RecommendedPets) => {
 
   return (
     <>
+    <div style={{display:"flex", alignContent: "center", justifyContent:"center", width:800}}>
       <ProfileSwiper
         id={id}
         name={name}
@@ -62,6 +63,7 @@ export const ProfileContainer = ({ pets }: RecommendedPets) => {
         description={description} 
         next={nextPet} 
         previous={previousPet}      />
+        </div>
     </>
   );
 };
