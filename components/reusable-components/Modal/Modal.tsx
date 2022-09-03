@@ -3,11 +3,10 @@ import styles from "./Modal.module.scss";
 import { motion } from "framer-motion";
 interface Props {
   children: ReactNode;
-  isOpen: boolean;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Modal: FC<Props> = ({ children, isOpen, setModalOpen }) => {
+const Modal: FC<Props> = ({ children, setModalOpen }) => {
   return (
     <>
       <motion.div

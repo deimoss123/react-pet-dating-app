@@ -42,12 +42,12 @@ const Home: NextPage = () => {
         onExitComplete={() => null}
       >
         {isSignupModalOpen && (
-          <Modal isOpen={isSignupModalOpen} setModalOpen={setSignupModalOpen}>
+          <Modal setModalOpen={setSignupModalOpen}>
             <SignupForm setModalOpen={setSignupModalOpen} />
           </Modal>
         )}
         {isLoginModalOpen && (
-          <Modal isOpen={isLoginModalOpen} setModalOpen={setLoginModalOpen}>
+          <Modal setModalOpen={setLoginModalOpen}>
             <LoginForm setModalOpen={setLoginModalOpen} />
           </Modal>
         )}
