@@ -1,1 +1,1 @@
-export * from './ProfileSwiper'
+export {ProfileSwiper} from './ProfileSwiper'

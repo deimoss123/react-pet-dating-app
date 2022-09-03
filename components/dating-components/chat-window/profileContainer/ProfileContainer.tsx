@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from "react";
-import {
-  Owners,
-  RecommendedPet,
-  RecommendedPets,
-} from "../../../../pages/dating";
-import ProfileSwiper from "./profileSwiper/ProfileSwiper";
+import {ProfileSwiper} from "./profileSwiper";
 
 export type ManageCurrentView= {
   next: Function,
   previous: Function
 }
 
-const ProfileContainer = ({ pets }: RecommendedPets) => {
+
+export interface RecommendedPet {
+  id: number;
+  name: string;
+  age: string;
+  type: string;
+  image: string;
+  gallery: string[];
+  description: string;
+}
+
+
+export type RecommendedPets = {
+  pets: RecommendedPet[];
+}
+
+export const ProfileContainer = ({ pets }: RecommendedPets) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPet, setCurrentPet] = useState(pets[currentIndex]);
+
 
   useEffect(() => {
     console.log(pets);
@@ -54,4 +66,3 @@ const ProfileContainer = ({ pets }: RecommendedPets) => {
   );
 };
 
-export default ProfileContainer;

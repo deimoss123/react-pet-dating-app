@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { type } from "os";
 import React, { useState } from "react";
-import ProfileContainer from "../components/dating-components/chat-window/profileContainer/ProfileContainer";
+import { ProfileContainer, RecommendedPets } from "../components/dating-components/chat-window/profileContainer/ProfileContainer";
 
 const Dating: NextPage = () => {
   
@@ -47,23 +47,5 @@ const Dating: NextPage = () => {
   );
 };
 
-export interface RecommendedPet {
-  id: number;
-  name: string;
-  age: string;
-  type: string;
-  image: string;
-  gallery: string[];
-  description: string;
-}
-
-
-export type RecommendedPets = {
-  pets: RecommendedPet[];
-}
-
-export type Owners = {
-  owner: boolean, 
-}
 
 export default Dating;

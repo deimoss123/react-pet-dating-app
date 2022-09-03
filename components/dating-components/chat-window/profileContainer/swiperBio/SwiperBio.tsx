@@ -1,8 +1,7 @@
 import React from "react";
-import { RecommendedPet, RecommendedPets } from "../../../../../pages/dating";
-import { PetBio } from "../profileSwiper";
+import { PetBio } from "../profileSwiper/ProfileSwiper";
 
-const SwiperBio = ({name, age, type}: PetBio) => {
+export const SwiperBio = ({name, age, type}: PetBio) => {
   return (
     <>
       <div style={{"userSelect": "none"}}>{name}</div>
@@ -11,5 +10,3 @@ const SwiperBio = ({name, age, type}: PetBio) => {
     </>
   );
 };
-
-export default SwiperBio;
