@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ManageCurrentView } from "../ProfileContainer";
 
-export const SwiperButtons = ({ next, previous }: ManageCurrentView) => {
+export const SwiperButtons = ({ next, previous, likePet }: ManageCurrentView) => {
   return (
     <>
     <div>
-      <button onClick={() => next()}>Like</button>
+      <button onClick={() => likePet()}>Like</button>
       <button onClick={() => next()}>Dislike</button>
       <button onClick={() => previous()}>Last</button>
       </div>

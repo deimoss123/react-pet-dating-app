@@ -16,8 +16,8 @@ const Heading: React.FC<Props> = ({likedPets, currentChat})  => {
     return (
         <>
         <div className={styles.userContainer}>
-            <img src= {likedPets.find(pet => pet.id === currentChat)?.image} alt= {likedPets.find(pet => pet.id === currentChat)?.name} className={styles.petImg}/>
-            <h3 className={styles.petName}>{likedPets.find(pet => pet.id === currentChat)?.name}</h3>
+            <img src= {likedPets?.find(pet => pet.id === currentChat)?.image} alt= {likedPets?.find(pet => pet.id === currentChat)?.name} className={styles.petImg}/>
+            <h3 className={styles.petName}>{likedPets?.find(pet => pet.id === currentChat)?.name}</h3>
         </div>
         </>
     );
