@@ -8,13 +8,11 @@ $modal-margin: 1rem;
   bottom: 0;
   right: 0;
   backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   .Modal {
-    z-index: 100;
-    min-width: 400px;
     max-width: 600px;
     width: 90%;
   }

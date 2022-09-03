@@ -8,41 +8,39 @@ interface Props {
 
 const Modal: FC<Props> = ({ children, setModalOpen }) => {
   return (
-    <>
+    <motion.div
+      className={styles.ModalOverlay}
+      onClick={() => setModalOpen(false)}
+      transition={{
+        duration: 0.3,
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <motion.div
-        className={styles.ModalOverlay}
-        onClick={() => setModalOpen(false)}
+        className={styles.Modal}
+        onClick={e => e.stopPropagation()}
         transition={{
-          duration: 0.3,
+          duration: 0.5,
+          type: "spring",
         }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        initial={{
+          y: "-100vh",
+          opacity: 0,
+        }}
+        animate={{
+          y: "0",
+          opacity: 1,
+        }}
+        exit={{
+          y: "100vh",
+          opacity: 0,
+        }}
       >
-        <motion.div
-          className={styles.Modal}
-          onClick={e => e.stopPropagation()}
-          transition={{
-            duration: 0.5,
-            type: "spring",
-          }}
-          initial={{
-            y: "-100vh",
-            opacity: 0,
-          }}
-          animate={{
-            y: "0",
-            opacity: 1,
-          }}
-          exit={{
-            y: "100vh",
-            opacity: 0,
-          }}
-        >
-          {children}
-        </motion.div>
+        {children}
       </motion.div>
-    </>
+    </motion.div>
   );
 };
 
