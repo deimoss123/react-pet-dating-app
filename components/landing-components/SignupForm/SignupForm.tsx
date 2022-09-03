@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, FC, SetStateAction, SyntheticEvent } from "react";
 import styles from "./SignupForm.module.scss";
@@ -14,7 +15,10 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
 
   return (
     <form className={styles.SignupForm} onSubmit={onSubmit}>
-      <h2>Sign Up</h2>
+      <h3>Sign Up</h3>
+      <button className={styles.closeBtn}>
+        <Image src="/icons/x-mark.svg" layout="fill" alt="close modal button" />
+      </button>
       <div className={styles.inputFields}>
         <label htmlFor="formEmail">Email</label>
         <input className={styles.textInput} type="email" id="formEmail" />
@@ -24,7 +28,7 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
         <input className={styles.textInput} type="password" id="formPassword" />
         <div className={styles.selectWrapper}>
           <div className={styles.genderWrapper}>
-            <h3>I&apos;m a:</h3>
+            <h2>I&apos;m a:</h2>
             <div>
               <input type="radio" id="gender-cat" name="gender" />
               <label htmlFor="gender-cat">Cat</label>
@@ -35,7 +39,7 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
             </div>
           </div>
           <div className={styles.interestsWrapper}>
-            <h3>I&apos;m interested in:</h3>
+            <h2>I&apos;m interested in:</h2>
             <div>
               <input type="checkbox" id="check-cat" />
               <label htmlFor="check-cat">Cats</label>
@@ -47,12 +51,9 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
           </div>
         </div>
       </div>
-      <div className={styles.btnRow}>
-        <button className={styles.cancelBtn}>Cancel</button>
-        <Link href="/dating">
-          <a className={styles.signupBtn}>Sign Up</a>
-        </Link>
-      </div>
+      <Link href="/dating">
+        <a className={styles.signupBtn}>Sign Up</a>
+      </Link>
     </form>
   );
 };

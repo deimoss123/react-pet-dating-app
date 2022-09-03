@@ -5,6 +5,7 @@ import SideBar from "../SideBar/SideBar";
 import styles from "./Header.module.scss";
 import Button from "../../reusable-components/Button/Button";
 import Link from "next/link";
+import HamburgerIcon from "../../reusable-components/HamburgerIcon/HamburgerIcon";
 
 interface Props {
   sidebarOpen: boolean;
@@ -26,17 +27,11 @@ const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
           <HeaderListItem text="Download" />
         </ul>
         <div className={styles.navRight}>
-          <button
+          <HamburgerIcon
+            isChecked={sidebarOpen}
             className={styles.hamburgerIcon}
             onClick={() => setSidebarOpen(!sidebarOpen)}
-          >
-            <Image
-              src="/icons/hamburger-icon.png"
-              alt="menu icon"
-              width="50px"
-              height="50px"
-            />
-          </button>
+          />
           <button className={styles.languageSelect}>
             <Image
               src="/icons/lang-icon.png"
@@ -51,7 +46,10 @@ const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
           </Link>
         </div>
       </nav>
-      <SideBar isOpen={sidebarOpen} />
+      <SideBar
+        setSidebarOpen={setSidebarOpen}
+        isOpen={sidebarOpen}
+      />
     </header>
   );
 };
