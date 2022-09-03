@@ -7,16 +7,22 @@ interface Props {
 }
 
 const SignupForm: FC<Props> = ({ setModalOpen }) => {
-  
   const [enteredInput, setEnteredInput] = useState({
     emailInput: "",
     usernameInput: "",
     passwordInput: "",
   });
 
+  const [inputIsValid, setInputIsValid] = useState({
+    emailIsValid: true,
+    usernameIsValid: true,
+    passwordIsValid: true,
+  });
+
   const emailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredInput({ ...enteredInput, emailInput: e.target.value });
   };
+
 
   const usernameChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredInput({ ...enteredInput, usernameInput: e.target.value });
@@ -26,38 +32,39 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
     setEnteredInput({ ...enteredInput, passwordInput: e.target.value });
   };
 
-  const [inputIsValid, setInputIsValid] = useState({
-    emailIsValid: true,
-    usernameIsValid: true,
-    passwordIsValid: true,
-  });
-
-  const checkValidity = () => {
+  const checkEmailValidity = () => {
     if (!(enteredInput.emailInput.includes("@"))) {
       setInputIsValid({
         ...inputIsValid,
         emailIsValid: false,
       });
     }
+  };
 
+  const checkUsernameValidity = () => {
     if (enteredInput.usernameInput.trim() == "") {
       setInputIsValid({
         ...inputIsValid,
         usernameIsValid: false,
       });
     }
+  };
 
+  const checkPasswordValidity = () => {
     if (enteredInput.passwordInput.trim() == "") {
       setInputIsValid({
         ...inputIsValid,
         passwordIsValid: false,
       });
     }
-  };
+  }
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    checkValidity();
+    checkEmailValidity();
+    checkUsernameValidity();
+    checkPasswordValidity();
+
     console.log(inputIsValid);
     console.log(enteredInput);
     setEnteredInput({
@@ -80,6 +87,7 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
       <div className={styles.inputFields}>
         <label htmlFor="formEmail">Email</label>
         <input
+          onBlur={checkEmailValidity}
           onChange={emailChangeHandler}
           className={`${styles["textInput"]} ${
             !inputIsValid.emailIsValid ? styles["error"] : ""
@@ -90,6 +98,7 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
         />
         <label htmlFor="formUsername">Username</label>
         <input
+          onBlur={checkUsernameValidity}
           onChange={usernameChangeHandler}
           className={`${styles["textInput"]} ${
             !inputIsValid.usernameIsValid ? styles["error"] : ""
@@ -100,6 +109,7 @@ const SignupForm: FC<Props> = ({ setModalOpen }) => {
         />
         <label htmlFor="formPassword">Password</label>
         <input
+          onBlur={checkPasswordValidity}
           onChange={passwordChangeHandler}
           className={`${styles["textInput"]} ${
             !inputIsValid.passwordIsValid ? styles["error"] : ""
