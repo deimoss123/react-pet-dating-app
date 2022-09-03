@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { type } from "os";
 import React, { useState } from "react";
+import ChatLayout from "../components/dating-components/chat-window/ChatLayout";
 import { ProfileContainer, RecommendedPets } from "../components/dating-components/chat-window/profileContainer/ProfileContainer";
 
 const Dating: NextPage = () => {
@@ -42,7 +43,11 @@ const Dating: NextPage = () => {
 
   return (
     <>
+    <div style={{display:"flex"}}>
+      <ChatLayout/>
       <ProfileContainer pets={recommendedPets.pets} />
+    </div>
+      
     </>
   );
 };
