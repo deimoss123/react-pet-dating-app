@@ -22,12 +22,8 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <div className={styles.Home}>
-        <Header
-          setSidebarOpen={setSidebarOpen}
-          sidebarOpen={sidebarOpen}
-          setModalOpen={setIsModalOpen}
-        />
-        <MainScreen />
+        <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
+        <MainScreen setModalOpen={setIsModalOpen} />
         <Testimonials />
         <LinkTree />
         <AppInfo />

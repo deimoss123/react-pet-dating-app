@@ -4,18 +4,14 @@ import HeaderListItem from "../HeaderListItem/HeaderListItem";
 import SideBar from "../SideBar/SideBar";
 import styles from "./Header.module.scss";
 import Button from "../../reusable-components/Button/Button";
+import Link from "next/link";
 
 interface Props {
   sidebarOpen: boolean;
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
-  setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Header: React.FC<Props> = ({
-  sidebarOpen,
-  setSidebarOpen,
-  setModalOpen,
-}) => {
+const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <header className={styles.header}>
       <nav className={styles.topNav}>
@@ -50,9 +46,9 @@ const Header: React.FC<Props> = ({
             />
             English
           </button>
-          <Button class="logIn" onClick={() => setModalOpen(true)}>
-            Log In
-          </Button>
+          <Link href="/dating">
+            <Button class="logIn">Log In</Button>
+          </Link>
         </div>
       </nav>
       <SideBar isOpen={sidebarOpen} />
