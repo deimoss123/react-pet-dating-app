@@ -6,12 +6,14 @@ import Link from "next/link";
 
 interface Props {
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+  setLoginModalOpen: Dispatch<SetStateAction<boolean>>;
   isOpen: boolean;
 }
 
-const SideBar: FC<Props> = ({ isOpen, setSidebarOpen }) => {
-  function onSignUpBtnClick() {
+const SideBar: FC<Props> = ({ isOpen, setLoginModalOpen, setSidebarOpen }) => {
+  function onLoginBtnClick() {
     setSidebarOpen(false);
+    setLoginModalOpen(true);
   }
 
   return (
@@ -24,10 +26,13 @@ const SideBar: FC<Props> = ({ isOpen, setSidebarOpen }) => {
           <HeaderListItem text="Support" />
           <HeaderListItem text="Download" />
         </ul>
-        {/* why isnt the button showing up???? */}
-        <Link href="/dating">
-          <Button class="logIn">Log In</Button>
-        </Link>
+        {/* Temporary button */}
+        <button
+          onClick={onLoginBtnClick}
+          style={{ color: "#fff", fontSize: "2rem" }}
+        >
+          Log In
+        </button>
       </nav>
     </div>
   );

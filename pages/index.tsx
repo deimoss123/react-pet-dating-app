@@ -27,6 +27,7 @@ const Home: NextPage = () => {
         <Header
           setSidebarOpen={setSidebarOpen}
           sidebarOpen={sidebarOpen}
+          setLoginModalOpen={setLoginModalOpen}
         />
         <MainScreen openSignupModal={setSignupModalOpen} />
         <Testimonials />

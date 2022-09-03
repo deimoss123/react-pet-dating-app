@@ -10,9 +10,14 @@ import HamburgerIcon from "../../reusable-components/HamburgerIcon/HamburgerIcon
 interface Props {
   sidebarOpen: boolean;
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+  setLoginModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
+const Header: React.FC<Props> = ({
+  sidebarOpen,
+  setSidebarOpen,
+  setLoginModalOpen,
+}) => {
   return (
     <header className={styles.header}>
       <nav className={styles.topNav}>
@@ -41,13 +46,14 @@ const Header: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
             />
             English
           </button>
-          <Link href="/dating">
-            <Button class="logIn">Log In</Button>
-          </Link>
+          <Button class="logIn" onClick={() => setLoginModalOpen(true)}>
+            Log In
+          </Button>
         </div>
       </nav>
       <SideBar
         setSidebarOpen={setSidebarOpen}
+        setLoginModalOpen={setLoginModalOpen}
         isOpen={sidebarOpen}
       />
     </header>
