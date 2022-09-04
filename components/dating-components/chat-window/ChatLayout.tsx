@@ -25,7 +25,7 @@ const variants = {
 
 const ChatLayout = ({ matchedPets }: MatchedPets) => {
   const [currentChat, setCurrentChat] = useState<Number>(0);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <>
