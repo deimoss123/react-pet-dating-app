@@ -2,9 +2,9 @@
 
 .forgotPassword {
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(212, 26, 26, 0.6);
   transition: color 0.3s;
   &:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: $red-accent;
   }
 }
