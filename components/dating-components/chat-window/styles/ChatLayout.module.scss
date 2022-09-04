@@ -6,17 +6,24 @@
 .chatLayout{
     height: 100%;
     min-height: 100vh;
+    min-width: 300px;
     z-index: 10;
     box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
 
 .chatWindow{
-    width: 100%;
+    position: absolute;
+    transform: translateX(300px);
+    transition: transform 0.3s linear;
+    width: 500px;
     height: 100%;
+    z-index: 5;
     background-color: #fff;
 }
 
 .none{
-    display: none;
+    transform: translateX(-600px);
+    transition: transform 0.3s linear;
+    z-index: 5;
 }

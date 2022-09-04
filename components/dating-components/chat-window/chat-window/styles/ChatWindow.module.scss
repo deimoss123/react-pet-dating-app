@@ -1,5 +1,6 @@
 
 .mainContainer{
+    width: 450px;
     height: 100%;
     min-height: 100vh;
     max-height: 100vh;
@@ -8,16 +9,14 @@
 }
 .chatBox{
     box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
-    width: 60%;
-    height: 100vh;
-    min-height: 100%;
+    height: inherit;
     overflow: auto;
     max-height: inherit;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    background-image: linear-gradient(to right, rgb(255, 197, 207) , rgb(255, 205, 255));
+    background-image: linear-gradient(to right, rgb(255, 197, 207) , rgb(255, 223, 205));
 }
 .inputField{
     width: 90%;
@@ -71,7 +70,6 @@
 
 .userContainer{
     background-color: white;
-    width: 60%;
     display: flex;
     justify-content: flex-start;
     align-items: center;

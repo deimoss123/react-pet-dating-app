@@ -41,7 +41,7 @@ const ChatLayout = ({ matchedPets }: MatchedPets) => {
         </motion.nav>
         <motion.nav
           className={styles.chat}
-          style={{ width: isOpen ? "320px" : "5px" }}
+          style={{ width: isOpen ? "300px" : "5px" }}
           animate={isOpen ? "open" : "closed"}
           variants={variants}
         >
@@ -53,7 +53,7 @@ const ChatLayout = ({ matchedPets }: MatchedPets) => {
               setIsOpen={setIsOpen}
             />
           </div>
-          <div className={currentChat === 0 ? styles.none : styles.chatWindow}>
+          <div className={currentChat === 0 || !isOpen ? styles.none : styles.chatWindow}>
             <ChatWindow likedPets={matchedPets} currentChat={currentChat} />
           </div>
         </motion.nav>
