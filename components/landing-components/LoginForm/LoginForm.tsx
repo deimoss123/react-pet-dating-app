@@ -22,8 +22,8 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
   });
 
   const [inputIsValid, setInputIsValid] = useState({
-    emailIsValid: false,
-    passwordIsValid: false,
+    emailIsValid: true,
+    passwordIsValid: true,
   });
 
   const [formisValid, setFormIsValid] = useState(false);
@@ -64,11 +64,6 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
     }
   };
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    console.log(inputIsValid);
-    e.preventDefault();
-  }
-
   const emailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredInput({ ...enteredInput, emailInput: e.target.value });
   };
@@ -76,6 +71,15 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
   const passwordChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredInput({ ...enteredInput, passwordInput: e.target.value });
   };
+
+  useEffect(() => {
+    if (
+      !enteredInput.emailInput.includes("@") ||
+      !enteredInput.passwordInput.trim()
+    ) {
+      setFormIsValid(false);
+    }
+  }, []);
 
   const buttonRedirect = !formisValid ? (
     <button type="submit" className={stylesSignUp.signupBtn}>
@@ -89,11 +93,25 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
     </Link>
   );
 
+  const tooBad = <p className={styles.forgotPassword}>Too bad!</p>;
 
+  const changeMessage = () => {
+    setMessage(tooBad);
+  }
+
+  const forgotPassword = (
+    <p onClick={changeMessage} className={styles.forgotPassword}>Forgot Password?</p>
+  );
+
+ const [initialMessage, setMessage] =  useState(forgotPassword);
 
   const closeModal = () => {
     setModalOpen(false);
   };
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
 
   return (
     <form className={stylesSignUp["SignupForm"]} onSubmit={onSubmit}>
@@ -122,7 +140,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
           type="password"
           id="formPassword"
         />
-        <p className={styles.forgotPassword}>Forgot Password?</p>
+        {initialMessage}
         {buttonRedirect}
       </div>
     </form>

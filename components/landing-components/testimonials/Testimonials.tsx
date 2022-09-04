@@ -29,7 +29,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <div className={styles["testimonialsWrapper"]}>
+    <section className={styles["testimonialsWrapper"]}>
       {arrayOfTestimonials.map((item, index) => (
         <TestimonialComponent
           index={index}
@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
           name={item.name}
         />
       ))}
-    </div>
+    </section>
   );
 };
 
