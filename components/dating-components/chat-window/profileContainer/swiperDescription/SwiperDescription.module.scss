@@ -1,0 +1,35 @@
+
+.descriptionWrapper{
+    background-color: white;
+    display: flex;
+    min-height: 120px;
+    padding-left: 15px;
+    overflow-y: auto;
+
+    .nameDescriptionWrapper{
+        display:flex;
+        flex-direction: column;
+        .name{
+            font-size: 40px;
+            text-shadow: 1px 1px rgb(126, 125, 125);
+            user-select: none
+        }
+        .description{
+            font-size: 18px;
+            user-select: none
+        }
+    }
+    .toggleButton{
+        display: flex;
+        flex:1;
+        justify-content: flex-end;
+        padding-right: 15px;
+        padding-top: 5px;
+    }
+}
+
+.topGradient{
+    background-color: rgba($color: #fff, $alpha: 1);
+    mask-image: linear-gradient(to top, rgba(255,255,255), transparent);
+    height:130px
+}
