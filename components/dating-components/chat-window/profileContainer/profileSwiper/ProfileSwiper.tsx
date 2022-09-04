@@ -10,6 +10,7 @@ import { ManageCurrentView, RecommendedPet } from "../ProfileContainer";
 import ProfileInfo from "../profileInfo/ProfileInfo";
 import { SwiperBio } from "../swiperBio";
 import { SwiperButtons } from "../swiperButtons";
+import styles from "./ProfileSwiper.module.scss";
 
 export interface PetBio {
   name: string;
@@ -21,6 +22,11 @@ export interface PetInfo {
   info: string;
 }
 
+export type Foo = {
+  height: number | undefined;
+  width: number | undefined;
+};
+
 export const ProfileSwiper = ({
   id,
   name,
@@ -31,7 +37,7 @@ export const ProfileSwiper = ({
   description,
   likePet,
   previous,
-  next
+  next,
 }: RecommendedPet & ManageCurrentView) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(gallery[currentIndex]);
@@ -61,59 +67,44 @@ export const ProfileSwiper = ({
 
   return (
     <>
-      <div style={{height: 800, display: "flex", flexDirection:"column" }}>
-        <div
-          style={{
-            position: "relative",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height:400
-          }}
-        >
-          <AnimatePresence initial={false} custom={swipeDirection}>
-            <motion.div
-              key={id+"id"+currentIndex}
-              style={{
-                position:"absolute",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                height: "400px",
-                width: "320px",
-                maxWidth:"320px",
-                backgroundImage: `url(${currentPhoto})`,
-              }}
-              custom={swipeDirection}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
+      <div className={styles.pictureContainer}>
+        <AnimatePresence initial={false} custom={swipeDirection}>
+          <motion.div
+            className={styles.backgroundPicture}
+            key={id + "id" + currentIndex}
+            style={{
+              backgroundImage: `url(${currentPhoto})`,
+            }}
+            custom={swipeDirection}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
 
-                if (swipe < -swipeConfidenceThreshold) {
-                  nextPhoto();
-                } else if (swipe > swipeConfidenceThreshold) {
-                  previousPhoto();
-                }
-              }}
-            >
-              <GalleryButtons next={nextPhoto} previous={previousPhoto} />
-              <SwiperBio name={name} age={age} type={type} />
-              <ProfileInfo
-                isDescriptionOpen={isDescriptionOpen}
-                setIsDescriptionOpen={setIsDescriptionOpen}
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
-        {isDescriptionOpen && (
-          <div style={{ userSelect: "none" }}>{description}</div>
-        )}
-        <SwiperButtons next={next} previous={previous} likePet={likePet} />
+              if (swipe < -swipeConfidenceThreshold) {
+                next();
+              } else if (swipe > swipeConfidenceThreshold) {
+                likePet();
+              }
+            }}
+          >
+            <GalleryButtons next={nextPhoto} previous={previousPhoto} />
+            <SwiperBio name={name} age={age} type={type} />
+            <ProfileInfo
+              isDescriptionOpen={isDescriptionOpen}
+              setIsDescriptionOpen={setIsDescriptionOpen}
+            />
+            {isDescriptionOpen && (
+              <div style={{ userSelect: "none" }}>{description}</div>
+            )}
+            <SwiperButtons next={next} previous={previous} likePet={likePet} />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </>
   );

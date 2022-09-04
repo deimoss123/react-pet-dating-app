@@ -5,6 +5,7 @@ import Heading from "./Heading";
 interface Props {
     setCurrentChat: Function;
     currentChat: Number;
+    setIsOpen: Function;
     likedPets: {
         id: number;
         name: string;
@@ -14,7 +15,7 @@ interface Props {
     }[];
 }
 
-const LikedPets : React.FC<Props> = ({ setCurrentChat, currentChat, likedPets })=> {
+const LikedPets : React.FC<Props> = ({ setCurrentChat, currentChat, likedPets, setIsOpen })=> {
 
 const handleClick = async(id: Number) => {
     if(currentChat === 0){
@@ -29,7 +30,7 @@ const handleClick = async(id: Number) => {
     return (
       <>
         <div className={styles.container}>
-            <Heading />
+            <Heading setIsOpen={setIsOpen}/>
             <h3 className={styles.msgHeading}>
                 Messages
             </h3>

@@ -1,0 +1,30 @@
+@import "../../../../../styles/variables.scss";
+
+.GalleryButtons {
+    display: flex;
+    align-items: stretch;
+    // margin-top:$gallery-height-pc/2-$gallery-next-previous-picture-mobile/2;
+
+    .right {
+        display: flex;
+        align-self: flex-end;
+        justify-self: flex-end;
+        justify-content: flex-end;
+        align-content: flex-end;
+        align-items: flex-end;
+        justify-items: flex-end;
+
+    }
+
+    .left {
+        display: flex;
+        align-self: flex-start;
+        justify-self: flex-start;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-items: flex-start;
+    }
+
+}
+

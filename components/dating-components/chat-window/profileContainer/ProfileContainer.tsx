@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { MatchedPet } from "../ChatLayout";
+import React, { useState } from "react";
 import {ProfileSwiper} from "./profileSwiper";
+import styles from "./ProfileContainer.module.scss"
 
 export type ManageCurrentView = {
   next: Function,
@@ -59,7 +59,7 @@ export const ProfileContainer = ({ pets, addNewPetToMatchedPets }: RecommendedPe
 
   return (
     <>
-    <div style={{display:"flex", alignContent: "center", justifyContent:"center", width:800}}>
+    <div className={styles.profileContainer}>
       <ProfileSwiper
         id={id}
         name={name}
