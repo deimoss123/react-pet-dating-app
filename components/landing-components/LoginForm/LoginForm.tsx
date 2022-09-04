@@ -22,7 +22,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
   });
 
   const [inputIsValid, setInputIsValid] = useState({
-    emailIsValid: true,
+    emailIsValid: false,
     passwordIsValid: false,
   });
 
@@ -65,7 +65,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
   };
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
-    console.log(formisValid);
+    console.log(inputIsValid);
     e.preventDefault();
   }
 
@@ -88,6 +88,8 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
       </a>
     </Link>
   );
+
+
 
   const closeModal = () => {
     setModalOpen(false);
@@ -115,7 +117,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
           onChange={passwordChangeHandler}
           onBlur={checkPasswordValidity}
           className={`${stylesSignUp["textInput"]} ${
-            !inputIsValid.emailIsValid ? stylesSignUp["error"] : " "
+            !inputIsValid.passwordIsValid ? stylesSignUp["error"] : " "
           }`}
           type="password"
           id="formPassword"

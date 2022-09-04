@@ -29,8 +29,9 @@ export const ProfileSwiper = ({
   image,
   gallery,
   description,
-  next,
+  likePet,
   previous,
+  next
 }: RecommendedPet & ManageCurrentView) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(gallery[currentIndex]);
@@ -43,22 +44,18 @@ export const ProfileSwiper = ({
   }, [gallery]);
 
   const nextPhoto = () => {
-    console.log("next");
     const nextIndex = currentIndex + 1;
     const nextPhoto = gallery[Math.abs(nextIndex % gallery.length)];
     setCurrentPhoto(nextPhoto);
     setCurrentIndex(nextIndex);
-    console.log(nextIndex);
     setSwipeDirection(1);
   };
 
   const previousPhoto = () => {
-    console.log("prev");
     const previousIndex = currentIndex - 1;
     const previousPhoto = gallery[Math.abs(previousIndex % gallery.length)];
     setCurrentPhoto(previousPhoto);
     setCurrentIndex(previousIndex);
-    console.log(previousIndex);
     setSwipeDirection(-1);
   };
 
@@ -116,7 +113,7 @@ export const ProfileSwiper = ({
         {isDescriptionOpen && (
           <div style={{ userSelect: "none" }}>{description}</div>
         )}
-        <SwiperButtons next={next} previous={previous} />
+        <SwiperButtons next={next} previous={previous} likePet={likePet} />
       </div>
     </>
   );

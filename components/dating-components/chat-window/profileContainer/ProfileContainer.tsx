@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { MatchedPet } from "../ChatLayout";
 import {ProfileSwiper} from "./profileSwiper";
 
-export type ManageCurrentView= {
+export type ManageCurrentView = {
   next: Function,
-  previous: Function
+  previous: Function,
+  likePet: Function,
 }
 
 
@@ -22,14 +24,13 @@ export type RecommendedPets = {
   pets: RecommendedPet[];
 }
 
-export const ProfileContainer = ({ pets }: RecommendedPets) => {
+export interface AddPetToMatched {
+  addNewPetToMatchedPets: Function;
+}
+
+export const ProfileContainer = ({ pets, addNewPetToMatchedPets }: RecommendedPets & AddPetToMatched) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPet, setCurrentPet] = useState(pets[currentIndex]);
-
-
-  useEffect(() => {
-    console.log(pets);
-  }, [pets]);
 
   const nextPet = () => {
     const nextIndex = currentIndex === pets.length - 1 ? 0 : currentIndex + 1;
@@ -48,6 +49,12 @@ export const ProfileContainer = ({ pets }: RecommendedPets) => {
 
   const { id, name, age, type, image, gallery, description } = currentPet;
 
+  const likePet = () => {
+    addNewPetToMatchedPets(id, name, age, type, gallery[0])
+    nextPet();
+  } 
+
+
 
 
   return (
@@ -62,7 +69,8 @@ export const ProfileContainer = ({ pets }: RecommendedPets) => {
         gallery={gallery}
         description={description} 
         next={nextPet} 
-        previous={previousPet}      />
+        previous={(previousPet)}
+        likePet={likePet}     />
         </div>
     </>
   );

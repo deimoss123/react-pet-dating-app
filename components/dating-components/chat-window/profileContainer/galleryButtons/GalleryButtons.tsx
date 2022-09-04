@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
-import { ManageCurrentView } from "../ProfileContainer";
+import React from "react";
 
-export const GalleryButtons = ({ next, previous }: ManageCurrentView) => {
+interface GalleryButtonActions {
+  next:Function,
+  previous:Function
+}
+
+export const GalleryButtons = ({ next, previous }: GalleryButtonActions) => {
   return (
     <>
       <div className={"GalleryButtons"}>

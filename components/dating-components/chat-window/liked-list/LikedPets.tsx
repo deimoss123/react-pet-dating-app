@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import  styles from"./styles/LikedPets.module.scss";
 import Heading from "./Heading";
 
@@ -33,7 +33,7 @@ const handleClick = async(id: Number) => {
             <h3 className={styles.msgHeading}>
                 Messages
             </h3>
-           { likedPets.map(pet => (
+           { likedPets?.map(pet => (
                 <div className={styles.petCard} key={pet.id} onClick={() => handleClick(pet.id)}>
                     <img src={pet.image} alt={pet.name}  className={styles.petImg}/>
                     <div className="pet-info">
