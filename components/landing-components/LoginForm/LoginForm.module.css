@@ -204,4 +204,15 @@
     padding: 3rem 4rem;
   }
 }
-/*# sourceMappingURL=SignupForm.module.css.map */
+
+.forgotPassword {
+  cursor: pointer;
+  color: rgba(212, 26, 26, 0.6);
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.forgotPassword:hover {
+  color: #df2b49;
+}
+/*# sourceMappingURL=LoginForm.module.css.map */

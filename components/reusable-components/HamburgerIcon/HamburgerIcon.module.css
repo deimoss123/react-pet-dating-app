@@ -1,0 +1,46 @@
+.HamburgerIcon {
+  position: relative;
+  width: 3rem;
+  height: 2rem;
+}
+
+.HamburgerIcon span {
+  position: absolute;
+  -webkit-transition: opacity 0.15s, -webkit-transform 0.3s;
+  transition: opacity 0.15s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.15s;
+  transition: transform 0.3s, opacity 0.15s, -webkit-transform 0.3s;
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.HamburgerIcon .line2,
+.HamburgerIcon .line3 {
+  top: 50%;
+}
+
+.HamburgerIcon .line4 {
+  top: 100%;
+}
+
+.HamburgerIcon.isChecked .line2 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.HamburgerIcon.isChecked .line3 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.HamburgerIcon.isChecked .line1,
+.HamburgerIcon.isChecked .line4 {
+  opacity: 0;
+}
+/*# sourceMappingURL=HamburgerIcon.module.css.map */

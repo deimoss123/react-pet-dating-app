@@ -46,6 +46,8 @@
 @media only screen and (max-width: 1200px) {
   .testimonialWrapper .innerWrapper {
     height: 24rem;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
