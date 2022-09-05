@@ -20,13 +20,13 @@ export const GalleryButtons = ({ next, previous }: GalleryButtonActions) => {
             color={"#fff"}
           />
         </button>
-        <div className={styles.right} onClick={() => next()}>
+        <button className={styles.right} onClick={() => next()}>
           <RightArrow
             width="60px"
             height="60px"
             color={"#fff"}
           />
-        </div>
+        </button>
       </div>
     </>
   );
