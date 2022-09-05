@@ -1,5 +1,4 @@
 import styles from "./HeaderListItem.module.scss";
-import { useEffect, useState } from "react"
 
 interface Props {
   text?: string;
