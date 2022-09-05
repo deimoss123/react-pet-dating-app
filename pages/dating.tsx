@@ -25,9 +25,8 @@ const Dating: NextPage = () => {
         name: "Zemene",
         age: "7 years",
         type: "cat",
-        image: "/photos/zemene/zemene.jpg",
         gallery: ["/photos/zemene/zemene.jpg", "/photos/zemene/zemene-2.jpg", "/photos/zemene/zemene-3.jpg", "/photos/zemene/zemene-4.jpg"],
-        description: "No thoughts, head empty, but pretty enough to make up for it. Will eat all of your lettuce.",
+        description: "No thoughts, head empty, but pretty enough to make up for it. 💋 Will eat all of your lettuce.",
       },
       
       {
@@ -35,10 +34,17 @@ const Dating: NextPage = () => {
         name: "Vinnis",
         age: "4 years",
         type: "dog",
-        image:
-          "/photos/vinnis/vinnis-2.jpg",
         gallery: ["/photos/vinnis/vinnis-1.jpg", "/photos/vinnis/vinnis-2.jpg"],
         description: "The fluffiest ball of destruction that will steal your heart and chew all your shoes.",
+      },
+      
+      {
+        id: 6,
+        name:"Freija",
+        age: "1 year",
+        type: "cat",
+        gallery: ["/photos/freija/freija-1.png", "/photos/freija/freija-2.png", "/photos/freija/freija-3.png", "/photos/freija/freija-4.png", "/photos/freija/freija-5.png"],
+        description: "It's my turn with the braincell today !! 👀"
       },
 
       {
@@ -46,7 +52,6 @@ const Dating: NextPage = () => {
         name: "Dore",
         age: "6 years",
         type: "dog",
-        image: "/photos/dore/dore-1.png",
         gallery: ["/photos/dore/dore-1.png", "/photos/dore/dore-2.png", "/photos/dore/dore-3.png", "/photos/dore/dore-4.png", "/photos/dore/dore-5.png"],
         description: "I feel my very best when I'm outside. If my owners would let me, I would never come inside."
       },
@@ -56,7 +61,6 @@ const Dating: NextPage = () => {
         name: "Lokum",
         age: "2.7 years",
         type: "cat",
-        image: "/photos/lokum/lokum-1.jpg",
         gallery: ["/photos/lokum/lokum-1.jpg", "/photos/lokum/lokum-2.jpg", "/photos/lokum/lokum-3.jpg"],
         description: "Searching for a cat with whom I would want to spend all nine lives together. <br/> I like food and treats, have been jailed for a day for stealing pizza from my human slave. <br/> <br/> Hobbies: <br/> Eating pizza <br/> Stare all day out the window <br/> Making biscuits"
       },
@@ -66,29 +70,18 @@ const Dating: NextPage = () => {
         name: "Tesa",
         age: "5 years",
         type: "dog",
-        image: "/photos/tesa/tesa-1.png",
         gallery: ["/photos/tesa/tesa-1.png", "/photos/tesa/tesa-2.png", "/photos/tesa/tesa-3.png", "/photos/tesa/tesa-4.png"],
         description: "I love my humans and I love helping them with house chores even more. I'm the best of the best and I will prove it!!!"
       },
       
-      {
-        id: 6,
-        name:"Freija",
-        age: "1 year",
-        type: "cat",
-        image: "/photos/freija/freija-1.png",
-        gallery: ["/photos/freija/freija-1.png", "/photos/freija/freija-2.png", "/photos/freija/freija-3.png", "/photos/freija/freija-4.png", "/photos/freija/freija-5.png"],
-        description: "It's my turn with the braincell today !! 👀"
-      },
 
       {
         id: 7,
         name: "Ella",
         age: "4 years",
         type: "dog",
-        image: "/photos/ella/ella-1.png",
         gallery: ["/photos/ella/ella-1.png", "/photos/ella/ella-2.png", "/photos/ella/ella-3.png", "/photos/ella/ella-4.png", "/photos/ella/ella-5.png"],
-        description: "100% Mischievous, 100% bubbly, 200% playful."
+        description: "50% Mischievous, 50% bubbly, 100% playful."
       },
 
       {
@@ -96,9 +89,8 @@ const Dating: NextPage = () => {
         name: "Tulle",
         age: "4 years",
         type: "dog",
-        image: "/photos/tulle/tulle-1.png",
         gallery: ["/photos/tulle/tulle-1.png", "/photos/tulle/tulle-2.png", "/photos/tulle/tulle-3.png", "/photos/tulle/tulle-4.png", "/photos/tulle/tulle-5.png"],
-        description: "Seriously pretty gal. 💅 My hobbies: being beautiful and getting praised. "
+        description: "Seriously pretty gal. 💅 <br/> My hobbies: being beautiful and getting praised. "
       }
     ],
   );

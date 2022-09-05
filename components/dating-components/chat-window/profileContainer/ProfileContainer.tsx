@@ -14,7 +14,6 @@ export interface RecommendedPet {
   name: string;
   age: string;
   type: string;
-  image: string;
   gallery: string[];
   description: string;
 }
@@ -47,7 +46,7 @@ export const ProfileContainer = ({ pets, addNewPetToMatchedPets }: RecommendedPe
     setCurrentIndex(previousIndex);
   };
 
-  const { id, name, age, type, image, gallery, description } = currentPet;
+  const { id, name, age, type, gallery, description } = currentPet;
 
   const likePet = () => {
     addNewPetToMatchedPets(id, name, age, type, gallery[0])
@@ -65,7 +64,6 @@ export const ProfileContainer = ({ pets, addNewPetToMatchedPets }: RecommendedPe
         name={name}
         age={age}
         type={type}
-        image={image}
         gallery={gallery}
         description={description} 
         next={nextPet} 
