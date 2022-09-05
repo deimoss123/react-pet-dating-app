@@ -32,6 +32,13 @@
     z-index: 6;
 }
 
+.toggleOn{
+    z-index: 7;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @media only screen and (max-width: 900px) {
     .chatLayout{
            min-width: 120px;

@@ -32,7 +32,6 @@ export const ProfileSwiper = ({
   name,
   age,
   type,
-  image,
   gallery,
   description,
   likePet,

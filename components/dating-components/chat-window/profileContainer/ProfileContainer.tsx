@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import {ProfileSwiper} from "./profileSwiper";
-import styles from "./ProfileContainer.module.scss"
+import { ProfileSwiper } from "./profileSwiper";
+import styles from "./ProfileContainer.module.scss";
 
 export type ManageCurrentView = {
-  next: Function,
-  previous: Function,
-  likePet: Function,
-}
-
+  next: Function;
+  previous: Function;
+  likePet: Function;
+};
 
 export interface RecommendedPet {
   id: number;
@@ -18,16 +17,20 @@ export interface RecommendedPet {
   description: string;
 }
 
-
 export type RecommendedPets = {
   pets: RecommendedPet[];
-}
+};
 
-export interface AddPetToMatched {
+export interface ManipulateMatchedPet {
   addNewPetToMatchedPets: Function;
+  removePetFromMatchedPets: Function;
 }
 
-export const ProfileContainer = ({ pets, addNewPetToMatchedPets }: RecommendedPets & AddPetToMatched) => {
+export const ProfileContainer = ({
+  pets,
+  addNewPetToMatchedPets,
+  removePetFromMatchedPets,
+}: RecommendedPets & ManipulateMatchedPet) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPet, setCurrentPet] = useState(pets[currentIndex]);
 
@@ -49,28 +52,30 @@ export const ProfileContainer = ({ pets, addNewPetToMatchedPets }: RecommendedPe
   const { id, name, age, type, gallery, description } = currentPet;
 
   const likePet = () => {
-    addNewPetToMatchedPets(id, name, age, type, gallery[0])
+    addNewPetToMatchedPets(id, name, age, type, gallery[0]);
     nextPet();
-  } 
+  };
 
-
-
+  const dislikePet = () => {
+    removePetFromMatchedPets(id);
+    nextPet();
+  };
 
   return (
     <>
-    <div className={styles.profileContainer}>
-      <ProfileSwiper
-        id={id}
-        name={name}
-        age={age}
-        type={type}
-        gallery={gallery}
-        description={description} 
-        next={nextPet} 
-        previous={(previousPet)}
-        likePet={likePet}     />
-        </div>
+      <div className={styles.profileContainer}>
+        <ProfileSwiper
+          id={id}
+          name={name}
+          age={age}
+          type={type}
+          gallery={gallery}
+          description={description}
+          next={dislikePet}
+          previous={previousPet}
+          likePet={likePet}
+        />
+      </div>
     </>
   );
 };
-

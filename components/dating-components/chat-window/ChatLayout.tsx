@@ -1,7 +1,7 @@
 import LikedPets from "./liked-list/LikedPets";
 import ChatWindow from "./chat-window/ChatWindow";
 import styles from "./styles/ChatLayout.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../../reusable-components/Button/Button";
 import { RightArrow } from "../../../public/icons/svg-icons";
@@ -18,14 +18,22 @@ export type MatchedPets = {
   matchedPets: MatchedPet[];
 };
 
+interface MobileViewEnabler {
+  isMobileView : boolean;
+}
+
 const variants = {
   open: { opacity: 1, x: 0 },
   closed: { opacity: 1, x: "-300px" },
 };
 
-const ChatLayout = ({ matchedPets }: MatchedPets) => {
+const ChatLayout = ({ matchedPets, isMobileView }: MatchedPets & MobileViewEnabler) => {
   const [currentChat, setCurrentChat] = useState<Number>(0);
   const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(()=>{
+    setIsOpen(!isMobileView)
+  },[isMobileView])
 
   return (
     <>
@@ -35,7 +43,7 @@ const ChatLayout = ({ matchedPets }: MatchedPets) => {
           animate={!isOpen ? "open" : "closed"}
           variants={variants}
         >
-          <button style={{display:isOpen?"none":"block"}} onClick={() => setIsOpen(!isOpen)}>
+          <button className={styles.toggleOn} style={{display:isOpen?"none":"block"}} onClick={() => setIsOpen(!isOpen)}>
             <RightArrow />
           </button>
         </motion.nav>
