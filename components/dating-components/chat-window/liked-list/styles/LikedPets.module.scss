@@ -41,6 +41,8 @@
 .petCardContainer{
         overflow-y: auto;
         max-height: 85vh;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 }
 
 .msgHeading {

@@ -20,11 +20,23 @@
 
 html,
 body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   font-family: "ProximaNova", system-ui, -apple-system, sans-serif, Helvetica, Arial;
 }
 
 html ::-webkit-scrollbar,
-body ::-webkit-scrollbar {
+body ::-webkit-scrollbar,
+div  ::-webkit-scrollbar {
+  display: none;
+}
+
+nav ::-webkit-scrollbar{
+  display: none;
+}
+
+div ::-webkit-scrollbar{
+
   display: none;
 }
 

@@ -6,27 +6,28 @@ import styles from "./GalleryButtons.module.scss";
 interface GalleryButtonActions {
   next: Function;
   previous: Function;
+  isGalleryButtonsDisabled:boolean
 }
 
-export const GalleryButtons = ({ next, previous }: GalleryButtonActions) => {
+export const GalleryButtons = ({ next, previous, isGalleryButtonsDisabled }: GalleryButtonActions) => {
 
   return (
     <>
       <div className={styles.GalleryButtons}>
-        <button className={styles.left} onClick={() => previous()}>
+        <button disabled={isGalleryButtonsDisabled} className={styles.left} onClick={() => previous()}>
           <LeftArrow
             width="60px"
             height="60px"
             color={"#fff"}
           />
         </button>
-        <div className={styles.right} onClick={() => next()}>
+        <button disabled={isGalleryButtonsDisabled} className={styles.right} onClick={() => next()}>
           <RightArrow
             width="60px"
             height="60px"
             color={"#fff"}
           />
-        </div>
+        </button>
       </div>
     </>
   );
