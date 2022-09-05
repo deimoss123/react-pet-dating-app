@@ -43,6 +43,7 @@ export const ProfileSwiper = ({
   const [currentPhoto, setCurrentPhoto] = useState(gallery[currentIndex]);
   const [swipeDirection, setSwipeDirection] = useState(0);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
+  const [isGalleryButtonsDisabled, setIsGalleryButtonsDisabled] =useState(false)
 
   useEffect(() => {
     setCurrentIndex(0);
@@ -106,10 +107,14 @@ export const ProfileSwiper = ({
               } else if (swipe > swipeConfidenceThreshold) {
                 likePetAndCloseDescription();
               }
+              setIsGalleryButtonsDisabled(false)
+            }}
+            onDrag={(e, { offset, velocity }) => {
+              setIsGalleryButtonsDisabled(true)
             }}
           >
             <div className={styles.contentWrapper}>
-              <GalleryButtons next={nextPhoto} previous={previousPhoto} />
+              <GalleryButtons next={nextPhoto} previous={previousPhoto} isGalleryButtonsDisabled={isGalleryButtonsDisabled}/>
               {isDescriptionOpen ? (
                 <SwiperDescription
                   name={name}
