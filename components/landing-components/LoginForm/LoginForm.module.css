@@ -212,6 +212,9 @@
   color: rgba(212, 26, 26, 0.6);
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .forgotPassword:hover {

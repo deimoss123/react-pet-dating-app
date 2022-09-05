@@ -19,6 +19,12 @@
   color: #f74f4f;
 }
 
+.HeaderListItem:hover ul.dropdown {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 .HeaderListItem:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
@@ -33,7 +39,7 @@
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   height: 2px;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   background-color: #f74f4f;
   -webkit-transform-origin: bottom center;
@@ -42,5 +48,29 @@
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.HeaderListItem ul.dropdown {
+  display: none !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 300%;
+  color: white;
+}
+
+.HeaderListItem ul.dropdown li.dropdownLI {
+  margin: 0;
+  padding: 0;
+  padding-top: 0.5em;
+  font-family: "ProximaNova-Bold";
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.HeaderListItem ul.dropdown li.dropdownLI:hover {
+  color: #f74f4f;
 }
 /*# sourceMappingURL=HeaderListItem.module.css.map */

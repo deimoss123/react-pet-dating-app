@@ -12,4 +12,20 @@
   padding-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.25);
 }
+
+.buttonWrapper .heart,
+.buttonWrapper .dislike,
+.buttonWrapper .return {
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.buttonWrapper .heart:hover,
+.buttonWrapper .dislike:hover,
+.buttonWrapper .return:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
 /*# sourceMappingURL=SwiperButtons.module.css.map */

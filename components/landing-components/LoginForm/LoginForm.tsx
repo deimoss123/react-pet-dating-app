@@ -29,7 +29,10 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
   const [formisValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
-    if (enteredInput.emailInput.includes("@") && enteredInput.passwordInput.trim().length > 0) {
+    if (
+      enteredInput.emailInput.includes("@") &&
+      enteredInput.passwordInput.trim().length > 0
+    ) {
       setFormIsValid(true);
     } else {
       setFormIsValid(false);
@@ -97,13 +100,15 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
 
   const changeMessage = () => {
     setMessage(tooBad);
-  }
+  };
 
   const forgotPassword = (
-    <p onClick={changeMessage} className={styles.forgotPassword}>Forgot Password?</p>
+    <p onClick={changeMessage} className={styles.forgotPassword}>
+      Forgot Password?
+    </p>
   );
 
- const [initialMessage, setMessage] =  useState(forgotPassword);
+  const [initialMessage, setMessage] = useState(forgotPassword);
 
   const closeModal = () => {
     setModalOpen(false);

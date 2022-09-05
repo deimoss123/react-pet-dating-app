@@ -25,12 +25,17 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <div className={styles.Home}>
-        <Header
+        {/* <Header
+          setSidebarOpen={setSidebarOpen}
+          sidebarOpen={sidebarOpen}
+          setLoginModalOpen={setLoginModalOpen}
+        /> */}
+        <MainScreen
+          openSignupModal={setSignupModalOpen}
           setSidebarOpen={setSidebarOpen}
           sidebarOpen={sidebarOpen}
           setLoginModalOpen={setLoginModalOpen}
         />
-        <MainScreen openSignupModal={setSignupModalOpen} />
         <Testimonials />
         <LinkTree />
         <AppInfo />
