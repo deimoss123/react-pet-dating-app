@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import ChatLayout, { MatchedPet } from "../components/dating-components/chat-window/ChatLayout";
 import {
   ProfileContainer,
-  RecommendedPets,
 } from "../components/dating-components/chat-window/profileContainer/ProfileContainer";
+import styles from "./styles/dating.module.scss"
 
 const Dating: NextPage = () => {
   const [matchedPets, setMatchedPets] = useState([
@@ -67,7 +67,7 @@ const Dating: NextPage = () => {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div className={styles.datingWrapper}>
         <ChatLayout matchedPets={matchedPets} />
         <ProfileContainer pets={recommendedPets} addNewPetToMatchedPets={addNewPetToMatchedPets} />
       </div>

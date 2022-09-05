@@ -38,6 +38,11 @@
          background-color: #eeeeee;
 }
 
+.petCardContainer{
+        overflow-y: auto;
+        max-height: 85vh;
+}
+
 .msgHeading {
         color:rgb(223, 43, 73);
         padding: 20px;
@@ -48,7 +53,7 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        background-image: linear-gradient(to right, rgb(223, 43, 73) , purple);
+        background-image: linear-gradient(to right, #df2b49, #e2520e);
         padding: 20px;
 }
 
@@ -65,4 +70,14 @@
         color: #fff;
         font-size: 18px;
         margin-left: 20px;
+}
+.buttonWrapper{
+        flex:1;
+        justify-content: flex-end;
+        display: flex;
+
+}
+.container{
+        max-height: 100vh;
+        height: 100%;
 }

@@ -5,6 +5,7 @@ import Heading from "./Heading";
 interface Props {
     setCurrentChat: Function;
     currentChat: Number;
+    setIsOpen: Function;
     likedPets: {
         id: number;
         name: string;
@@ -14,7 +15,7 @@ interface Props {
     }[];
 }
 
-const LikedPets : React.FC<Props> = ({ setCurrentChat, currentChat, likedPets })=> {
+const LikedPets : React.FC<Props> = ({ setCurrentChat, currentChat, likedPets, setIsOpen })=> {
 
 const handleClick = async(id: Number) => {
     if(currentChat === 0){
@@ -29,22 +30,24 @@ const handleClick = async(id: Number) => {
     return (
       <>
         <div className={styles.container}>
-            <Heading />
+            <Heading setIsOpen={setIsOpen}/>
             <h3 className={styles.msgHeading}>
                 Messages
             </h3>
-           { likedPets?.map(pet => (
-                <div className={styles.petCard} key={pet.id} onClick={() => handleClick(pet.id)}>
-                    <img src={pet.image} alt={pet.name}  className={styles.petImg}/>
-                    <div className="pet-info">
-                        <div className={styles.petInfo}>
-                            <h3 className={styles.petName}>{pet.name}</h3>
-                            <p className={styles.peAge}>{pet.age}</p>
+            <div className={styles.petCardContainer}>
+                { likedPets?.map(pet => (
+                    <div className={styles.petCard} key={pet.id} onClick={() => handleClick(pet.id)}>
+                        <img src={pet.image} alt={pet.name}  className={styles.petImg}/>
+                        <div className="pet-info">
+                            <div className={styles.petInfo}>
+                                <h3 className={styles.petName}>{pet.name}</h3>
+                                <p className={styles.peAge}>{pet.age}</p>
+                            </div>
+                            <p className={styles.petType}>New match say hello! {pet.type}</p>
                         </div>
-                        <p className={styles.petType}>New match say hello! {pet.type}</p>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
       </>
     )

@@ -25,14 +25,8 @@ const SideBar: FC<Props> = ({ isOpen, setLoginModalOpen, setSidebarOpen }) => {
           <HeaderListItem text="Safety" />
           <HeaderListItem text="Support" />
           <HeaderListItem text="Download" />
+          <HeaderListItem onClick={onLoginBtnClick} text="Log In" />
         </ul>
-        {/* Temporary button */}
-        <button
-          onClick={onLoginBtnClick}
-          style={{ color: "#fff", fontSize: "2rem" }}
-        >
-          Log In
-        </button>
       </nav>
     </div>
   );

@@ -29,12 +29,12 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
   const [formisValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
-    if (inputIsValid.emailIsValid && inputIsValid.passwordIsValid) {
+    if (enteredInput.emailInput.includes("@") && enteredInput.passwordInput.trim().length > 0) {
       setFormIsValid(true);
     } else {
       setFormIsValid(false);
     }
-  }, [inputIsValid.emailIsValid, inputIsValid.passwordIsValid]);
+  }, [enteredInput]);
 
   const checkEmailValidity = () => {
     if (!enteredInput.emailInput.includes("@")) {
@@ -87,7 +87,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
     </button>
   ) : (
     <Link href="/dating">
-      <a className={`${stylesSignUp["signupBtn"]}  ${stylesSignUp["link"]}`}>
+      <a className={`${stylesSignUp["signupBtn"]} ${stylesSignUp["link"]}`}>
         Sign Up
       </a>
     </Link>
@@ -129,6 +129,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
           }`}
           type="email"
           id="formEmail"
+          value={enteredInput.emailInput}
         />
         <label htmlFor="formPassword">Password</label>
         <input
@@ -139,6 +140,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
           }`}
           type="password"
           id="formPassword"
+          value={enteredInput.passwordInput}
         />
         {initialMessage}
         {buttonRedirect}
