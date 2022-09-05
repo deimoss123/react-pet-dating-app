@@ -9,6 +9,7 @@
       -ms-flex: 1;
           flex: 1;
   padding-top: 300px;
+  cursor: pointer;
 }
 
 .GalleryButtons .right {

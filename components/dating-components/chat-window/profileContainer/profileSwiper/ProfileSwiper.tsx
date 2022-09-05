@@ -119,7 +119,6 @@ export const ProfileSwiper = ({
                 />
               ) : (
                 <div>
-                  {" "}
                   <SwiperBio
                     name={name}
                     age={age}
