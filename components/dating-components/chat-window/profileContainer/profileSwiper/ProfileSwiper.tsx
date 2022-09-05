@@ -104,7 +104,7 @@ export const ProfileSwiper = ({
               if (swipe < -swipeConfidenceThreshold) {
                 nextPetAndCloseDescription();
               } else if (swipe > swipeConfidenceThreshold) {
-                previousPetAndCloseDescription();
+                likePetAndCloseDescription();
               }
             }}
           >
