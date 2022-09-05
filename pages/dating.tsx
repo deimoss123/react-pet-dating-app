@@ -27,7 +27,7 @@ const Dating: NextPage = () => {
         type: "cat",
         image: "/photos/zemene/zemene.jpg",
         gallery: ["/photos/zemene/zemene.jpg", "/photos/zemene/zemene-2.jpg", "/photos/zemene/zemene-3.jpg", "/photos/zemene/zemene-4.jpg"],
-        description: "No thoughts, head empty, but pretty enough to make up for it. 💋 Will eat all of your lettuce.",
+        description: "No thoughts, head empty, but pretty enough to make up for it. Will eat all of your lettuce.",
       },
       
       {
@@ -40,16 +40,7 @@ const Dating: NextPage = () => {
         gallery: ["/photos/vinnis/vinnis-1.jpg", "/photos/vinnis/vinnis-2.jpg"],
         description: "The fluffiest ball of destruction that will steal your heart and chew all your shoes.",
       },
-      {
-        id: 45,
-        name: "Vinnis",
-        age: "4 years",
-        type: "dog",
-        image:
-          "/photos/vinnis/vinnis-2.jpg",
-        gallery: ["/photos/vinnis/vinnis-1.jpg", "/photos/vinnis/vinnis-2.jpg"],
-        description: "The fluffiest ball of destruction that will steal your heart and chew all your shoes.",
-      },
+
       {
         id: 3,
         name: "Dore",
@@ -59,9 +50,19 @@ const Dating: NextPage = () => {
         gallery: ["/photos/dore/dore-1.png", "/photos/dore/dore-2.png", "/photos/dore/dore-3.png", "/photos/dore/dore-4.png", "/photos/dore/dore-5.png"],
         description: "I feel my very best when I'm outside. If my owners would let me, I would never come inside."
       },
-
+      
       {
         id: 4,
+        name: "Lokum",
+        age: "2.7 years",
+        type: "cat",
+        image: "/photos/lokum/lokum-1.jpg",
+        gallery: ["/photos/lokum/lokum-1.jpg", "/photos/lokum/lokum-2.jpg", "/photos/lokum/lokum-3.jpg"],
+        description: "Searching for a cat with whom I would want to spend all nine lives together. <br/> I like food and treats, have been jailed for a day for stealing pizza from my human slave. <br/> <br/> Hobbies: <br/> Eating pizza <br/> Stare all day out the window <br/> Making biscuits"
+      },
+      
+      {
+        id: 5,
         name: "Tesa",
         age: "5 years",
         type: "dog",
@@ -69,9 +70,9 @@ const Dating: NextPage = () => {
         gallery: ["/photos/tesa/tesa-1.png", "/photos/tesa/tesa-2.png", "/photos/tesa/tesa-3.png", "/photos/tesa/tesa-4.png"],
         description: "I love my humans and I love helping them with house chores even more. I'm the best of the best and I will prove it!!!"
       },
-
+      
       {
-        id: 5,
+        id: 6,
         name:"Freija",
         age: "1 year",
         type: "cat",
@@ -81,7 +82,7 @@ const Dating: NextPage = () => {
       },
 
       {
-        id: 6,
+        id: 7,
         name: "Ella",
         age: "4 years",
         type: "dog",
@@ -91,7 +92,7 @@ const Dating: NextPage = () => {
       },
 
       {
-        id: 7,
+        id: 8,
         name: "Tulle",
         age: "4 years",
         type: "dog",
