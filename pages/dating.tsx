@@ -37,6 +37,15 @@ const Dating: NextPage = () => {
         gallery: ["/photos/vinnis/vinnis-1.jpg", "/photos/vinnis/vinnis-2.jpg"],
         description: "The fluffiest ball of destruction that will steal your heart and chew all your shoes.",
       },
+      
+      {
+        id: 6,
+        name:"Freija",
+        age: "1 year",
+        type: "cat",
+        gallery: ["/photos/freija/freija-1.png", "/photos/freija/freija-2.png", "/photos/freija/freija-3.png", "/photos/freija/freija-4.png", "/photos/freija/freija-5.png"],
+        description: "It's my turn with the braincell today !! 👀"
+      },
 
       {
         id: 3,
@@ -65,14 +74,6 @@ const Dating: NextPage = () => {
         description: "I love my humans and I love helping them with house chores even more. I'm the best of the best and I will prove it!!!"
       },
       
-      {
-        id: 6,
-        name:"Freija",
-        age: "1 year",
-        type: "cat",
-        gallery: ["/photos/freija/freija-1.png", "/photos/freija/freija-2.png", "/photos/freija/freija-3.png", "/photos/freija/freija-4.png", "/photos/freija/freija-5.png"],
-        description: "It's my turn with the braincell today !! 👀"
-      },
 
       {
         id: 7,
