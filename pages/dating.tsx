@@ -13,7 +13,7 @@ const Dating: NextPage = () => {
       id: 24,
       name: "Buna",
       age: "1 years",
-      type: "Dog",
+      type: "Cat",
       image:
         "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     },
@@ -39,19 +39,9 @@ const Dating: NextPage = () => {
         gallery: ["/photos/vinnis/vinnis-1.jpg", "/photos/vinnis/vinnis-2.jpg"],
         description: "The fluffiest ball of destruction that will steal your heart and chew all your shoes.",
       },
-      {
-        id: 3,
-        name: "Bella",
-        age: "1 years",
-        type: "dog",
-        image:
-          "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-        gallery: ["/photos/freija.png", "/photos/harrisons.jpg"],
-        description: "",
-      },
 
       {
-        id: 4,
+        id: 3,
         name: "Dore",
         age: "6 years",
         type: "dog",
@@ -61,7 +51,7 @@ const Dating: NextPage = () => {
       },
 
       {
-        id: 5,
+        id: 4,
         name: "Tesa",
         age: "5 years",
         type: "dog",
@@ -72,6 +62,16 @@ const Dating: NextPage = () => {
 
       {
         id: 5,
+        name:"Freija",
+        age: "1 year",
+        type: "cat",
+        image: "/photos/freija/freija-1.png",
+        gallery: ["/photos/freija/freija-1.png", "/photos/freija/freija-2.png", "/photos/freija/freija-3.png", "/photos/freija/freija-4.png", "/photos/freija/freija-5.png"],
+        description: "It's my turn with the braincell today !! 👀"
+      },
+
+      {
+        id: 6,
         name: "Ella",
         age: "4 years",
         type: "dog",
@@ -81,13 +81,13 @@ const Dating: NextPage = () => {
       },
 
       {
-        id: 6,
+        id: 7,
         name: "Tulle",
         age: "4 years",
         type: "dog",
         image: "/photos/tulle/tulle-1.png",
         gallery: ["/photos/tulle/tulle-1.png", "/photos/tulle/tulle-2.png", "/photos/tulle/tulle-3.png", "/photos/tulle/tulle-4.png", "/photos/tulle/tulle-5.png"],
-        description: "Seriously pretty gal. 💅My hobbies: being beautiful and getting praised. "
+        description: "Seriously pretty gal. 💅 My hobbies: being beautiful and getting praised. "
       }
     ],
   );
