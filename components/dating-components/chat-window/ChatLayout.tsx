@@ -29,7 +29,7 @@ const ChatLayout = ({ matchedPets }: MatchedPets) => {
 
   return (
     <>
-      <div>
+      <div className={styles.chatWrapper}>
         
         <motion.nav 
           animate={!isOpen ? "open" : "closed"}
