@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LinkTree: React.FC = () => {
   return (
-    <div className={styles["linkTreeWrapper"]}>
+    <section className={styles["linkTreeWrapper"]}>
       <div>
         <ul>
           <h3>LEGAL</h3>
@@ -59,7 +59,7 @@ const LinkTree: React.FC = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

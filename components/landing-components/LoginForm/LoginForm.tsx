@@ -22,19 +22,19 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
   });
 
   const [inputIsValid, setInputIsValid] = useState({
-    emailIsValid: false,
-    passwordIsValid: false,
+    emailIsValid: true,
+    passwordIsValid: true,
   });
 
   const [formisValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
-    if (inputIsValid.emailIsValid && inputIsValid.passwordIsValid) {
+    if (enteredInput.emailInput.includes("@") && enteredInput.passwordInput.trim().length > 0) {
       setFormIsValid(true);
     } else {
       setFormIsValid(false);
     }
-  }, [inputIsValid.emailIsValid, inputIsValid.passwordIsValid]);
+  }, [enteredInput]);
 
   const checkEmailValidity = () => {
     if (!enteredInput.emailInput.includes("@")) {
@@ -64,11 +64,6 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
     }
   };
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    console.log(inputIsValid);
-    e.preventDefault();
-  }
-
   const emailChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredInput({ ...enteredInput, emailInput: e.target.value });
   };
@@ -77,23 +72,46 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
     setEnteredInput({ ...enteredInput, passwordInput: e.target.value });
   };
 
+  useEffect(() => {
+    if (
+      !enteredInput.emailInput.includes("@") ||
+      !enteredInput.passwordInput.trim()
+    ) {
+      setFormIsValid(false);
+    }
+  }, []);
+
   const buttonRedirect = !formisValid ? (
     <button type="submit" className={stylesSignUp.signupBtn}>
       Sign Up
     </button>
   ) : (
     <Link href="/dating">
-      <a className={`${stylesSignUp["signupBtn"]}  ${stylesSignUp["link"]}`}>
+      <a className={`${stylesSignUp["signupBtn"]} ${stylesSignUp["link"]}`}>
         Sign Up
       </a>
     </Link>
   );
 
+  const tooBad = <p className={styles.forgotPassword}>Too bad!</p>;
 
+  const changeMessage = () => {
+    setMessage(tooBad);
+  }
+
+  const forgotPassword = (
+    <p onClick={changeMessage} className={styles.forgotPassword}>Forgot Password?</p>
+  );
+
+ const [initialMessage, setMessage] =  useState(forgotPassword);
 
   const closeModal = () => {
     setModalOpen(false);
   };
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
 
   return (
     <form className={stylesSignUp["SignupForm"]} onSubmit={onSubmit}>
@@ -111,6 +129,7 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
           }`}
           type="email"
           id="formEmail"
+          value={enteredInput.emailInput}
         />
         <label htmlFor="formPassword">Password</label>
         <input
@@ -121,8 +140,9 @@ const LoginForm: FC<Props> = ({ setModalOpen }) => {
           }`}
           type="password"
           id="formPassword"
+          value={enteredInput.passwordInput}
         />
-        <p className={styles.forgotPassword}>Forgot Password?</p>
+        {initialMessage}
         {buttonRedirect}
       </div>
     </form>

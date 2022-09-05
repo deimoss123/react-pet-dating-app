@@ -8,7 +8,7 @@ interface Props {
 
 const MainScreen: React.FC<Props> = ({ openSignupModal }) => {
   return (
-    <div className={styles["mainScreenWrapper"]}>
+    <main className={styles["mainScreenWrapper"]}>
       <video autoPlay loop muted plays-inline="true">
         <source src="/video/background-vid.mp4" />
       </video>
@@ -16,7 +16,7 @@ const MainScreen: React.FC<Props> = ({ openSignupModal }) => {
       <Button class="hover" onClick={() => openSignupModal(true)}>
         Create account
       </Button>
-    </div>
+    </main>
   );
 };
 

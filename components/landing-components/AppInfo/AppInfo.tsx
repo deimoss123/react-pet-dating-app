@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AppInfo: React.FC = () => {
   return (
-    <div className={styles["appInfoWrapper"]}>
+    <section className={styles["appInfoWrapper"]}>
       <div className={styles["bannerContainer"]}>
         <h3>GET THE APP!</h3>
         <button>
@@ -36,7 +36,7 @@ const AppInfo: React.FC = () => {
           in between.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

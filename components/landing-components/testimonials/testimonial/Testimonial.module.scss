@@ -34,13 +34,13 @@
     }
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1250px) {
     .innerWrapper {
       height: 24rem;
     }
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 950px) {
     &.conditional {
       display: none;
     }
@@ -50,15 +50,20 @@
     }
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 550px) {
     .innerWrapper {
-      min-height: 20rem;
+      min-height: 15rem;
     }
   }
 
   @media only screen and (max-width: 350px) {
     .innerWrapper {
-      min-height: 30rem;
+      min-height: 20rem;
+    }
+  }
+  @media only screen and (max-width: 300px) {
+    .innerWrapper {
+      min-height: 28rem;
     }
   }
 }
