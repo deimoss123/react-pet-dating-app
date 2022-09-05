@@ -27,3 +27,16 @@
     transition: transform 0.3s linear;
     z-index: 5;
 }
+
+@media only screen and (max-width: 900px) {
+    .chatLayout{
+           min-width: 120px;
+    }
+    .chatWindow{
+        transform: translateX(120px);
+        transition: transform 0.3s linear;
+        z-index: 9;
+        width: calc(100% - 120px);
+    }
+
+}

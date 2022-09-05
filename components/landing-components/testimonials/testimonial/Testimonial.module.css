@@ -43,15 +43,13 @@
   color: #505965;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
   .testimonialWrapper .innerWrapper {
     height: 24rem;
-    -webkit-box-shadow: none;
-            box-shadow: none;
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
   .testimonialWrapper.conditional {
     display: none;
   }
@@ -61,15 +59,21 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
   .testimonialWrapper .innerWrapper {
-    min-height: 20rem;
+    min-height: 15rem;
   }
 }
 
 @media only screen and (max-width: 350px) {
   .testimonialWrapper .innerWrapper {
-    min-height: 30rem;
+    min-height: 20rem;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .testimonialWrapper .innerWrapper {
+    min-height: 28rem;
   }
 }
 /*# sourceMappingURL=Testimonial.module.css.map */

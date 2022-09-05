@@ -7,9 +7,9 @@ import {
 } from "../../../../reusable-components/animationUtil";
 import { GalleryButtons } from "../galleryButtons";
 import { ManageCurrentView, RecommendedPet } from "../ProfileContainer";
-import ProfileInfo from "../profileInfo/ProfileInfo";
 import { SwiperBio } from "../swiperBio";
 import { SwiperButtons } from "../swiperButtons";
+import { SwiperDescription } from "../swiperDescription";
 import styles from "./ProfileSwiper.module.scss";
 
 export interface PetBio {
@@ -56,6 +56,21 @@ export const ProfileSwiper = ({
     setCurrentIndex(nextIndex);
     setSwipeDirection(1);
   };
+  
+  const likePetAndCloseDescription=()=>{
+    likePet()
+    setIsDescriptionOpen(false)
+  }
+
+  const nextPetAndCloseDescription =()=>{
+    next();
+    setIsDescriptionOpen(false)
+  }
+
+  const previousPetAndCloseDescription=()=>{
+    previous()
+    setIsDescriptionOpen(false)
+  }
 
   const previousPhoto = () => {
     const previousIndex = currentIndex - 1;
@@ -87,22 +102,39 @@ export const ProfileSwiper = ({
               const swipe = swipePower(offset.x, velocity.x);
 
               if (swipe < -swipeConfidenceThreshold) {
-                next();
+                nextPetAndCloseDescription();
               } else if (swipe > swipeConfidenceThreshold) {
-                likePet();
+                previousPetAndCloseDescription();
               }
             }}
           >
-            <GalleryButtons next={nextPhoto} previous={previousPhoto} />
-            <SwiperBio name={name} age={age} type={type} />
-            <ProfileInfo
-              isDescriptionOpen={isDescriptionOpen}
-              setIsDescriptionOpen={setIsDescriptionOpen}
-            />
-            {isDescriptionOpen && (
-              <div style={{ userSelect: "none" }}>{description}</div>
-            )}
-            <SwiperButtons next={next} previous={previous} likePet={likePet} />
+            <div className={styles.contentWrapper}>
+              <GalleryButtons next={nextPhoto} previous={previousPhoto} />
+              {isDescriptionOpen ? (
+                <SwiperDescription
+                  name={name}
+                  isDescriptionOpen={isDescriptionOpen}
+                  setIsDescriptionOpen={setIsDescriptionOpen}
+                  description={description}
+                />
+              ) : (
+                <div>
+                  {" "}
+                  <SwiperBio
+                    name={name}
+                    age={age}
+                    type={type}
+                    isDescriptionOpen={isDescriptionOpen}
+                    setIsDescriptionOpen={setIsDescriptionOpen}
+                  />
+                  <SwiperButtons
+                    next={nextPetAndCloseDescription}
+                    previous={previousPetAndCloseDescription}
+                    likePet={likePetAndCloseDescription}
+                  />
+                </div>
+              )}
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>

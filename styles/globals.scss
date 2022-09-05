@@ -21,6 +21,9 @@ html,
 body {
   font-family: "ProximaNova", system-ui, -apple-system, sans-serif, Helvetica,
     Arial;
+    ::-webkit-scrollbar {
+      display: none;
+    }
 }
 
 a {

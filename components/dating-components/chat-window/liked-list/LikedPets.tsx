@@ -38,7 +38,7 @@ const handleClick = async(id: Number) => {
                 { likedPets?.map(pet => (
                     <div className={styles.petCard} key={pet.id} onClick={() => handleClick(pet.id)}>
                         <img src={pet.image} alt={pet.name}  className={styles.petImg}/>
-                        <div className="pet-info">
+                        <div className={styles.petStats}>
                             <div className={styles.petInfo}>
                                 <h3 className={styles.petName}>{pet.name}</h3>
                                 <p className={styles.peAge}>{pet.age}</p>

@@ -1,0 +1,10 @@
+.buttonWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    background-color: rgba($color: #000000, $alpha: 0.25);
+    .undoButton{
+
+    }
+}

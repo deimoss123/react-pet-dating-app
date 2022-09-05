@@ -48,7 +48,7 @@ const Dating: NextPage = () => {
         image:
           "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
         gallery: ["/photos/freija.png", "/photos/harrisons.jpg"],
-        description: "I am a dog, my name is Bella",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt metus et nunc sodales, ac tristique massa sagittis. Sed at nisi nisi. Vivamus ullamcorper cursus elit, sit amet consequat sapien pellentesque vel. Pellentesque lobortis erat quam. Fusce nec nibh porta lectus rhoncus iaculis. Sed rutrum tortor sed metus maximus, quis luctus augue tempor. Sed urna lacus, tristique eget malesuada in, porttitor eu purus. Vivamus in rutrum sem. Duis finibus odio id eros ullamcorper suscipit. Nunc id vestibulum lacus. In nec sapien augue. Sed varius justo urna, vel scelerisque lacus aliquet eget. Aliquam erat volutpat. In quis cursus massa. Ut eget arcu justo. Donec dui eros, euismod at urna ac, lacinia laoreet ligula. Morbi iaculis lorem dui, posuere viverra mi elementum luctus. Cras scelerisque at nisl eu ultricies. Aliquam in purus metus. Vestibulum varius maximus massa, eu fermentum ipsum malesuada pretium. Donec semper dictum aliquam. Proin a viverra sem, vel dignissim velit. Mauris a mattis nibh. Praesent molestie tortor velit, ut fermentum diam placerat et. Donec elementum viverra velit ac hendrerit.",
       },
     ],
   );

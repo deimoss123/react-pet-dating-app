@@ -1,10 +1,12 @@
+@import "../../../../../styles/variables.scss";
 .backgroundPicture {
     position: absolute;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 400px;
-    width: 320px;
-    max-width: 320px;
+    height: $gallery-height-pc;
+    width: $gallery-width-pc;
+    max-width: $gallery-width-pc;
+    display: flex;
 }
 
 .pictureContainer {
@@ -12,9 +14,16 @@
     flex: 1;
     display: flex;
     width: 100%;
-    min-width: 320px;
+    min-width: $gallery-width-pc;
     height: 100%;
     place-content: center;
     place-items: center;
     place-self: center;
+}
+.contentWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex:1;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);;
 }

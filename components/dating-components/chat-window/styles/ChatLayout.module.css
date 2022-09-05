@@ -11,8 +11,7 @@
 .chatLayout {
   height: 100%;
   min-height: 100vh;
-  width: 30%;
-  min-width: 350px;
+  min-width: 300px;
   z-index: 10;
   -webkit-box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
@@ -20,12 +19,42 @@
 }
 
 .chatWindow {
-  width: 100%;
+  position: absolute;
+  -webkit-transform: translateX(300px);
+          transform: translateX(300px);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  width: 500px;
   height: 100%;
+  z-index: 5;
   background-color: #fff;
 }
 
 .none {
-  display: none;
+  -webkit-transform: translateX(-600px);
+          transform: translateX(-600px);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 900px) {
+  .chatLayout {
+    min-width: 120px;
+  }
+  .chatWindow {
+    -webkit-transform: translateX(120px);
+            transform: translateX(120px);
+    -webkit-transition: -webkit-transform 0.3s linear;
+    transition: -webkit-transform 0.3s linear;
+    transition: transform 0.3s linear;
+    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+    z-index: 9;
+    width: calc(100% - 120px);
+  }
 }
 /*# sourceMappingURL=ChatLayout.module.css.map */

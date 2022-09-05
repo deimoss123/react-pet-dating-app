@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "ProfileInfo.module.scss",
+        "../../../../../styles/variables.scss"
+    ],
+    "names": [],
+    "file": "ProfileInfo.module.css"
+}

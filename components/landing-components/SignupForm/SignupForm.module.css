@@ -26,6 +26,8 @@
   opacity: 0.5;
   -webkit-transform: scale(1);
           transform: scale(1);
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #df2b49) saturate(200%) brightness(0.6);
+          filter: opacity(0.5) drop-shadow(0 0 0 #df2b49) saturate(200%) brightness(0.6);
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }

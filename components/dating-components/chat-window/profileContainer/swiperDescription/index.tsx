@@ -1,0 +1,2 @@
+export {SwiperDescription} from './SwiperDescription'
+ 
