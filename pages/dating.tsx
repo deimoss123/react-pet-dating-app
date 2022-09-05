@@ -85,7 +85,9 @@ const Dating: NextPage = () => {
         name: "Tulle",
         age: "4 years",
         type: "dog",
-        image: "",
+        image: "/photos/tulle/tulle-1.png",
+        gallery: ["/photos/tulle/tulle-1.png", "/photos/tulle/tulle-2.png", "/photos/tulle/tulle-3.png", "/photos/tulle/tulle-4.png", "/photos/tulle/tulle-5.png"],
+        description: "Seriously pretty gal. 💅My hobbies: being beautiful and getting praised. "
       }
     ],
   );
