@@ -29,6 +29,7 @@ const Dating: NextPage = () => {
         gallery: ["/photos/zemene/zemene.jpg", "/photos/zemene/zemene-2.jpg", "/photos/zemene/zemene-3.jpg", "/photos/zemene/zemene-4.jpg"],
         description: "No thoughts, head empty, but pretty enough to make up for it. 💋 Will eat all of your lettuce.",
       },
+      
       {
         id: 2,
         name: "Vinnis",
@@ -39,7 +40,16 @@ const Dating: NextPage = () => {
         gallery: ["/photos/vinnis/vinnis-1.jpg", "/photos/vinnis/vinnis-2.jpg"],
         description: "The fluffiest ball of destruction that will steal your heart and chew all your shoes.",
       },
-
+      {
+        id: 45,
+        name: "Vinnis",
+        age: "4 years",
+        type: "dog",
+        image:
+          "/photos/vinnis/vinnis-2.jpg",
+        gallery: ["/photos/vinnis/vinnis-1.jpg", "/photos/vinnis/vinnis-2.jpg"],
+        description: "The fluffiest ball of destruction that will steal your heart and chew all your shoes.",
+      },
       {
         id: 3,
         name: "Dore",
