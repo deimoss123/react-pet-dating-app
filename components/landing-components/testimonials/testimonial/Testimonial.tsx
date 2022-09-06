@@ -1,4 +1,4 @@
-import styles from "./Testimonial.module.css";
+import styles from "./Testimonial.module.scss";
 
 const TestimonialComponent: React.FC<{
   text: string[];

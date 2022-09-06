@@ -1,4 +1,4 @@
-import styles from "./MainScreen.module.css";
+import styles from "./MainScreen.module.scss";
 import Button from "../../reusable-components/Button/Button";
 import { Dispatch, SetStateAction } from "react";
 import Header from "../Header/Header";

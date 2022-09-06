@@ -1,4 +1,4 @@
-import styles from "./AppInfo.module.css";
+import styles from "./AppInfo.module.scss";
 import Image from "next/image";
 
 const AppInfo: React.FC = () => {
@@ -7,10 +7,10 @@ const AppInfo: React.FC = () => {
       <div className={styles["bannerContainer"]}>
         <h3>GET THE APP!</h3>
         <button>
-          <Image width="120px" height="40px" src="/icons/appstore.png" />
+          <Image alt="app store banner" width="120px" height="40px" src="/icons/appstore.png" />
         </button>
         <button>
-          <Image width="130px" height="60px" src="/icons/googleplay.png" />
+          <Image alt="google play banner" width="130px" height="60px" src="/icons/googleplay.png" />
         </button>
       </div>
       <div>

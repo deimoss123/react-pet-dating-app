@@ -1,5 +1,5 @@
 import TestimonialComponent from "./Testimonial/Testimonial";
-import styles from "./Testimonials.module.css";
+import styles from "./Testimonials.module.scss";
 
 class Testimonial {
   id: string;
