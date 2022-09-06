@@ -2,8 +2,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
   video {
     object-fit: cover;
     width: 100%;
@@ -17,7 +17,7 @@
     color: white;
     font-family: "ProximaNova-Bold";
     font-size: 9vw;
-    margin-top: 5%;
+    margin-top: 33vh;
     cursor: default;
     user-select: none;
   }

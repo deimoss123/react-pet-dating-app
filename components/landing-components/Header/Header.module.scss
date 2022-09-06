@@ -1,7 +1,7 @@
 @import "./../../../styles/variables.scss";
 
 .header {
-  position: fixed;
+  position: sticky;
   z-index: 1;
   left: 0;
   top: 0;
@@ -12,7 +12,6 @@
     rgba(0, 0, 0, 0.7) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-  // background-color: #333;
 
   .topNav {
     height: 100%;
