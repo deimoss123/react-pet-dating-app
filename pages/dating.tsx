@@ -121,6 +121,21 @@ const Dating: NextPage = () => {
     },
 
     {
+      id: 9,
+      name: "Harijs",
+      age: "1 years",
+      type: "cat",
+      gallery: [
+        "/photos/harijs/harijs-1.jpg",
+        "/photos/harijs/harijs-2.jpg",
+        "/photos/harijs/harijs-3.jpg",
+        "/photos/harijs/harijs-4.jpg",
+      ],
+      description:
+        "If you like to play fetch and showing dogs where their place is, then we will get along. ",
+    },
+
+    {
       id: 7,
       name: "Ella",
       age: "4 years",
@@ -150,20 +165,7 @@ const Dating: NextPage = () => {
       description:
         "Seriously pretty gal. 💅 <br/> My hobbies: being beautiful and getting praised. ",
     },
-    {
-      id: 9,
-      name: "Harijs",
-      age: "1 years",
-      type: "cat",
-      gallery: [
-        "/photos/harijs/harijs-1.jpg",
-        "/photos/harijs/harijs-2.jpg",
-        "/photos/harijs/harijs-3.jpg",
-        "/photos/harijs/harijs-4.jpg",
-      ],
-      description:
-        "If you like to play fetch and showing dogs where their place is, then we will get along. ",
-    },
+  
   ]);
 
   const isPetNotInArray = (

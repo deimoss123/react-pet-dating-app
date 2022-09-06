@@ -45,8 +45,8 @@ export const ProfileSwiper = ({
   }, [gallery]);
 
   const nextPhoto = () => {
-    const nextIndex = currentIndex + 1;
-    const nextPhoto = gallery[Math.abs(nextIndex % gallery.length)];
+    const nextIndex = currentIndex + 1; //key needs to be unique for swiper animation
+    const nextPhoto = gallery[Math.abs(nextIndex % gallery.length)]; // actual index of picture, MathAbs is needed because key (nextIndex) can be negative.
     setCurrentPhoto(nextPhoto);
     setCurrentIndex(nextIndex);
     setSwipeDirection(1);
