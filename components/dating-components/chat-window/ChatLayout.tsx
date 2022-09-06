@@ -1,7 +1,7 @@
 import LikedPets from "./liked-list/LikedPets";
 import ChatWindow from "./chat-window/ChatWindow";
 import styles from "./styles/ChatLayout.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../../reusable-components/Button/Button";
 import { RightArrow } from "../../../public/icons/svg-icons";
@@ -18,31 +18,35 @@ export type MatchedPets = {
   matchedPets: MatchedPet[];
 };
 
+interface ChatState {
+  isChatOpen : boolean;
+  setIsChatOpen: Function;
+}
+
 const variants = {
   open: { opacity: 1, x: 0 },
   closed: { opacity: 1, x: "-300px" },
 };
 
-const ChatLayout = ({ matchedPets }: MatchedPets) => {
+const ChatLayout = ({ matchedPets, isChatOpen, setIsChatOpen }: MatchedPets & ChatState) => {
   const [currentChat, setCurrentChat] = useState<Number>(0);
-  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <>
       <div className={styles.chatWrapper}>
         
         <motion.nav 
-          animate={!isOpen ? "open" : "closed"}
+          animate={!isChatOpen ? "open" : "closed"}
           variants={variants}
         >
-          <button style={{display:isOpen?"none":"block"}} onClick={() => setIsOpen(!isOpen)}>
+          <button className={styles.toggleOn} style={{display:isChatOpen?"none":"block"}} onClick={() => setIsChatOpen(!isChatOpen)}>
             <RightArrow />
           </button>
         </motion.nav>
         <motion.nav
           className={styles.chat}
-          style={{ width: isOpen ? "300px" : "5px" }}
-          animate={isOpen ? "open" : "closed"}
+          style={{ width: isChatOpen ? "300px" : "5px" }}
+          animate={isChatOpen ? "open" : "closed"}
           variants={variants}
         >
           <div className={styles.chatLayout}>
@@ -50,10 +54,10 @@ const ChatLayout = ({ matchedPets }: MatchedPets) => {
               likedPets={matchedPets}
               setCurrentChat={setCurrentChat}
               currentChat={currentChat}
-              setIsOpen={setIsOpen}
+              setIsOpen={setIsChatOpen}
             />
           </div>
-          <div className={currentChat === 0 || !isOpen ? styles.none : styles.chatWindow}>
+          <div className={currentChat === 0 || !isChatOpen ? styles.none : styles.chatWindow}>
             <ChatWindow likedPets={matchedPets} currentChat={currentChat} />
           </div>
         </motion.nav>

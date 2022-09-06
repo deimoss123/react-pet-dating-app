@@ -22,28 +22,22 @@ export interface PetInfo {
   info: string;
 }
 
-export type Foo = {
-  height: number | undefined;
-  width: number | undefined;
-};
-
 export const ProfileSwiper = ({
   id,
   name,
   age,
   type,
-  image,
   gallery,
   description,
   likePet,
   previous,
-  next,
+  dislikePet
 }: RecommendedPet & ManageCurrentView) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(gallery[currentIndex]);
   const [swipeDirection, setSwipeDirection] = useState(0);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [isGalleryButtonsDisabled, setIsGalleryButtonsDisabled] =useState(false)
+  const [isGalleryButtonsDisabled, setIsGalleryButtonsDisabled] = useState(false);
 
   useEffect(() => {
     setCurrentIndex(0);
@@ -63,8 +57,8 @@ export const ProfileSwiper = ({
     setIsDescriptionOpen(false)
   }
 
-  const nextPetAndCloseDescription =()=>{
-    next();
+  const dislikePetAndCloseDescription =()=>{
+    dislikePet();
     setIsDescriptionOpen(false)
   }
 
@@ -103,7 +97,7 @@ export const ProfileSwiper = ({
               const swipe = swipePower(offset.x, velocity.x);
 
               if (swipe < -swipeConfidenceThreshold) {
-                nextPetAndCloseDescription();
+                dislikePetAndCloseDescription();
               } else if (swipe > swipeConfidenceThreshold) {
                 likePetAndCloseDescription();
               }
@@ -124,7 +118,6 @@ export const ProfileSwiper = ({
                 />
               ) : (
                 <div>
-                  {" "}
                   <SwiperBio
                     name={name}
                     age={age}
@@ -133,7 +126,7 @@ export const ProfileSwiper = ({
                     setIsDescriptionOpen={setIsDescriptionOpen}
                   />
                   <SwiperButtons
-                    next={nextPetAndCloseDescription}
+                    dislikePet={dislikePetAndCloseDescription}
                     previous={previousPetAndCloseDescription}
                     likePet={likePetAndCloseDescription}
                   />

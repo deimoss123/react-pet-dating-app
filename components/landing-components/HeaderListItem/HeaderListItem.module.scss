@@ -15,6 +15,9 @@ $hoverColor: #f74f4f;
 
   &:hover {
     color: $hoverColor;
+    ul.dropdown {
+      display: flex !important;
+    }
     &::after {
       transform: scaleX(1);
       transform-origin: bottom center;
@@ -26,10 +29,27 @@ $hoverColor: #f74f4f;
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     background-color: $hoverColor;
     transform-origin: bottom center;
     transition: transform 0.3s ease-out;
+  }
+  ul.dropdown {
+    display: none !important;
+    flex-direction: column;
+    position: absolute;
+    width: 300%;
+    color: white;
+    li.dropdownLI {
+      margin: 0;
+      padding: 0;
+      padding-top: 0.5em;
+      font-family: "ProximaNova-Bold";
+      transition: color 0.3s;
+      &:hover {
+        color: $hoverColor;
+      }
+    }
   }
 }

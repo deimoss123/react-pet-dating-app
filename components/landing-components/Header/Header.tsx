@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction} from "react";
 import HeaderListItem from "../HeaderListItem/HeaderListItem";
 import SideBar from "../SideBar/SideBar";
 import styles from "./Header.module.scss";
 import Button from "../../reusable-components/Button/Button";
-import Link from "next/link";
 import HamburgerIcon from "../../reusable-components/HamburgerIcon/HamburgerIcon";
 
 interface Props {
@@ -18,6 +17,19 @@ const Header: React.FC<Props> = ({
   setSidebarOpen,
   setLoginModalOpen,
 }) => {
+  const productsDropdown = [
+    "Premium features",
+    "Subscription tiers",
+    "Swipe night",
+  ];
+  const safetyDropdown = [
+    "Community guidelines",
+    "Safety tips",
+    "Safety & policy",
+    "Safety & reporting",
+    "Security",
+  ];
+
   return (
     <header className={styles.header}>
       <nav className={styles.topNav}>
@@ -25,9 +37,9 @@ const Header: React.FC<Props> = ({
           <Image src="/icons/pawtners-logo.png" alt="logo" layout="fill" />
         </div>
         <ul>
-          <HeaderListItem text="Products" />
+          <HeaderListItem dropdown={productsDropdown} text="Products" />
           <HeaderListItem text="Learn" />
-          <HeaderListItem text="Safety" />
+          <HeaderListItem dropdown={safetyDropdown} text="Safety" />
           <HeaderListItem text="Support" />
           <HeaderListItem text="Download" />
         </ul>

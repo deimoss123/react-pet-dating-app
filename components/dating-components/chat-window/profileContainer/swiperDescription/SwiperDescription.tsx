@@ -8,6 +8,10 @@ export interface DescriptionInfo {
   description: string;
 }
 
+const addLineBreaks = (formatableText: string) => {
+  return formatableText.split("<br/>").join("\n")
+}
+
 export const SwiperDescription = ({
   isDescriptionOpen,
   setIsDescriptionOpen,
@@ -20,7 +24,7 @@ export const SwiperDescription = ({
       <div className={styles.descriptionWrapper}>
         <div className={styles.nameDescriptionWrapper}>
           <div className={styles.name}>{name}</div>
-          <div className={styles.description}>{description}</div>
+          <div className={styles.description} style={{ whiteSpace: "pre-line" }}>{addLineBreaks(description)}</div>
         </div>
         <ToggleInfoButton
           isDescriptionOpen={isDescriptionOpen}

@@ -1,22 +1,31 @@
 @import "../../../../../styles/variables.scss";
 
-.GalleryButtons {
-    display: flex;
-    align-items: stretch;
-    flex:1;
-    padding-top: $gallery-height-pc/2;
-    // margin-top:$gallery-height-pc/2-$gallery-next-previous-picture-mobile/2;
-
-    .right {
-        display: flex;
-        justify-content: flex-end;
-        flex:1
-    }
-
-    .left {
-        display: flex;
-        justify-content: flex-start;
-    }
-
+%hoverZoom {
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.5);
+  }
 }
 
+.GalleryButtons {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  padding-top: $gallery-height-pc/2;
+  cursor: pointer;
+  // margin-top:$gallery-height-pc/2-$gallery-next-previous-picture-mobile/2;
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    svg {
+      @extend %hoverZoom;
+    }
+  }
+  .left {
+    @extend %hoverZoom;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
