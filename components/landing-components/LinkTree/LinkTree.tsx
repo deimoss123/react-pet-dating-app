@@ -24,19 +24,19 @@ const LinkTree: React.FC = () => {
         <ul className={styles["socials"]}>
           <h3>SOCIALS</h3>
           <li>
-            <Image width="30px" height="30px" src="/icons/instagram.png" />
+            <Image alt="instagram logo" width="30px" height="30px" src="/icons/instagram.png" />
           </li>
           <li>
-            <Image width="35px" height="35px" src="/icons/tik-tok.png" />
+            <Image alt="tik-tok logo" width="35px" height="35px" src="/icons/tik-tok.png" />
           </li>
           <li>
-            <Image width="35px" height="35px" src="/icons/youtube.png" />
+            <Image alt="youtube logo" width="35px" height="35px" src="/icons/youtube.png" />
           </li>
           <li>
-            <Image width="30px" height="30px" src="/icons/twitter.png" />
+            <Image alt="twitter logo" width="30px" height="30px" src="/icons/twitter.png" />
           </li>
           <li>
-            <Image width="30px" height="30px" src="/icons/facebook.png" />
+            <Image alt="facebook logo" width="30px" height="30px" src="/icons/facebook.png" />
           </li>
         </ul>
       </div>
