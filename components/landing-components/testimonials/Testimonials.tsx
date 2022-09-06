@@ -1,4 +1,4 @@
-import TestimonialComponent from "./Testimonial/Testimonial";
+import TestimonialComponent from "./testimonial/Testimonial";
 import styles from "./Testimonials.module.scss";
 
 class Testimonial {
