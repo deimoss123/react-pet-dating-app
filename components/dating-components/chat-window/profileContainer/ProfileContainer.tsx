@@ -3,11 +3,14 @@ import { ProfileSwiper } from "./profileSwiper";
 import styles from "./ProfileContainer.module.scss";
 
 export type ManageCurrentView = {
-  next: Function;
   previous: Function;
   likePet: Function;
   dislikePet: Function;
 };
+
+interface isChatOpen {
+  isChatOpen: boolean;
+}
 
 export interface RecommendedPet {
   id: number;
@@ -31,26 +34,22 @@ export const ProfileContainer = ({
   pets,
   addNewPetToMatchedPets,
   removePetFromMatchedPets,
-}: RecommendedPets & ManipulateMatchedPet) => {
+  isChatOpen
+}: RecommendedPets & ManipulateMatchedPet & isChatOpen) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentPet, setCurrentPet] = useState(pets[currentIndex]);
 
+  
   const nextPet = () => {
-    const nextIndex = currentIndex === pets.length - 1 ? 0 : currentIndex + 1;
-    const nextPet = pets[nextIndex];
-    setCurrentPet(nextPet);
+    const nextIndex = (currentIndex === pets.length - 1) ? 0 : currentIndex + 1;
     setCurrentIndex(nextIndex);
   };
 
   const previousPet = () => {
-    const previousIndex =
-      currentIndex === 0 ? pets.length - 1 : currentIndex - 1;
-    const previousPet = pets[previousIndex];
-    setCurrentPet(previousPet);
+    const previousIndex = (currentIndex === 0) ? pets.length - 1 : currentIndex - 1;
     setCurrentIndex(previousIndex);
   };
 
-  const { id, name, age, type, gallery, description } = currentPet;
+  const { id, name, age, type, gallery, description } = pets[currentIndex];
 
   const likePet = () => {
     addNewPetToMatchedPets(id, name, age, type, gallery[0]);
@@ -64,7 +63,7 @@ export const ProfileContainer = ({
 
   return (
     <>
-      <div className={styles.profileContainer}>
+      <div className={isChatOpen? styles.profileContainer: styles.profileContainerHiddenChat}>
         <ProfileSwiper
           id={id}
           name={name}
@@ -72,7 +71,6 @@ export const ProfileContainer = ({
           type={type}
           gallery={gallery}
           description={description}
-          next={nextPet}
           dislikePet={dislikePet}
           previous={previousPet}
           likePet={likePet}

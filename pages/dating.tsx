@@ -1,9 +1,6 @@
 import type { NextPage } from "next";
-import { type } from "os";
 import React, { useEffect, useState } from "react";
-import ChatLayout, {
-  MatchedPet,
-} from "../components/dating-components/chat-window/ChatLayout";
+import ChatLayout from "../components/dating-components/chat-window/ChatLayout";
 import { ProfileContainer } from "../components/dating-components/chat-window/profileContainer/ProfileContainer";
 import styles from "./styles/dating.module.scss";
 
@@ -19,14 +16,14 @@ const Dating: NextPage = () => {
     },
   ]);
 
-  const [isMobileView, setIsMobileView] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 520) {
-        setIsMobileView(true);
+        setIsChatOpen(false);
       } else if (window.innerWidth >= 520) {
-        setIsMobileView(false);
+        setIsChatOpen(true);
       }
     };
 
@@ -155,7 +152,7 @@ const Dating: NextPage = () => {
     },
   ]);
 
-  const checkIfPetInArray = (
+  const isPetNotInArray = (
     matchedPets: {
       id: number;
       name: string;
@@ -165,7 +162,7 @@ const Dating: NextPage = () => {
     }[],
     id: number
   ) => {
-    return !(matchedPets.filter((object) => object.id === id).length > 0);
+    return (matchedPets.filter((object) => object.id === id).length === 0);
   };
 
   const addNewPetToMatchedPets = (
@@ -175,7 +172,7 @@ const Dating: NextPage = () => {
     type: string,
     image: string
   ) => {
-    if (checkIfPetInArray(matchedPets, id)) {
+    if (isPetNotInArray(matchedPets, id)) {
       const newArray = [
         ...matchedPets,
         { id: id, name: name, age: age, type: type, image: image },
@@ -192,8 +189,9 @@ const Dating: NextPage = () => {
   return (
     <>
       <div className={styles.datingWrapper}>
-        <ChatLayout matchedPets={matchedPets} isMobileView={isMobileView} />
+        <ChatLayout matchedPets={matchedPets} isChatOpen={isChatOpen} setIsChatOpen={setIsChatOpen} />
         <ProfileContainer
+          isChatOpen={isChatOpen}
           pets={recommendedPets}
           addNewPetToMatchedPets={addNewPetToMatchedPets}
           removePetFromMatchedPets={removePetFromMatchedPets}

@@ -1,11 +1,9 @@
 import React from "react";
 import { ManageCurrentView } from "../ProfileContainer";
-import { RiCloseFill } from "react-icons/ri";
 import { FaUndo, FaHeart, FaTimes } from "react-icons/fa";
 import styles from "./SwiperButtons.module.scss";
 
 export const SwiperButtons = ({
-  next,
   previous,
   likePet,
   dislikePet

@@ -4,13 +4,25 @@
     top:0px;
     z-index: 3;
     height: 100%;
+    width: 100%;
     margin-left: 150px;
+}
+
+.profileContainerHiddenChat{
+    position: absolute;  
+    top:0px;
+    z-index: 3;
+    height: 100%;
     width: 100%;
 }
+
 
 @media only screen and (max-width: 900px) {
     .profileContainer{
         margin-left: 60px;
+    }
+    .profileContainerHiddenChat{
+        margin-left: 0px;
     }
 }
 

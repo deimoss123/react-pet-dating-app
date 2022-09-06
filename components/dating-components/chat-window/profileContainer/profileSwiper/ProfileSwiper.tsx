@@ -31,14 +31,13 @@ export const ProfileSwiper = ({
   description,
   likePet,
   previous,
-  next,
   dislikePet
 }: RecommendedPet & ManageCurrentView) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(gallery[currentIndex]);
   const [swipeDirection, setSwipeDirection] = useState(0);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [isGalleryButtonsDisabled, setIsGalleryButtonsDisabled] =useState(false)
+  const [isGalleryButtonsDisabled, setIsGalleryButtonsDisabled] = useState(false);
 
   useEffect(() => {
     setCurrentIndex(0);
@@ -58,10 +57,6 @@ export const ProfileSwiper = ({
     setIsDescriptionOpen(false)
   }
 
-  const nextPetAndCloseDescription =()=>{
-    next();
-    setIsDescriptionOpen(false)
-  }
   const dislikePetAndCloseDescription =()=>{
     dislikePet();
     setIsDescriptionOpen(false)
@@ -132,7 +127,6 @@ export const ProfileSwiper = ({
                   />
                   <SwiperButtons
                     dislikePet={dislikePetAndCloseDescription}
-                    next={nextPetAndCloseDescription}
                     previous={previousPetAndCloseDescription}
                     likePet={likePetAndCloseDescription}
                   />
