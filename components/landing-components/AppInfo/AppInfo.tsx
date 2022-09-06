@@ -1,4 +1,4 @@
-import styles from "./AppInfo.module.css";
+import styles from "./AppInfo.module.scss";
 import Image from "next/image";
 
 const AppInfo: React.FC = () => {

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAA;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,YAAY;EAC7B,cAAc,EAAE,IAAI;EACpB,gBAAgB,EAAe,mBAAO;CAIzC",
-    "sources": [
-        "SwiperButtons.module.scss"
-    ],
-    "names": [],
-    "file": "SwiperButtons.module.css"
-}

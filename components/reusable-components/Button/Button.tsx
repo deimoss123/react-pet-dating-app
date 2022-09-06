@@ -1,10 +1,10 @@
-import styles from "./Button.module.css";
+import styles from "./Button.module.scss";
 
 const Button: React.FC<{
   children: string;
   class?: string;
   onClick?: (e: React.MouseEvent) => any;
-}> = (props) => {
+}> = props => {
   return (
     <button
       onClick={props.onClick}

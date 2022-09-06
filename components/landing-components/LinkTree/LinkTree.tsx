@@ -1,4 +1,4 @@
-import styles from "./LinkTree.module.css";
+import styles from "./LinkTree.module.scss";
 import Image from "next/image";
 
 const LinkTree: React.FC = () => {
