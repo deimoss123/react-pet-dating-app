@@ -6,6 +6,7 @@ export type ManageCurrentView = {
   next: Function;
   previous: Function;
   likePet: Function;
+  dislikePet: Function;
 };
 
 export interface RecommendedPet {
@@ -71,7 +72,8 @@ export const ProfileContainer = ({
           type={type}
           gallery={gallery}
           description={description}
-          next={dislikePet}
+          next={nextPet}
+          dislikePet={dislikePet}
           previous={previousPet}
           likePet={likePet}
         />

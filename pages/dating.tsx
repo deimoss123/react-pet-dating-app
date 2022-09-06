@@ -19,23 +19,23 @@ const Dating: NextPage = () => {
     },
   ]);
 
-  const [isMobileView, setIsMobileView] = useState(false)
+  const [isMobileView, setIsMobileView] = useState(false);
 
   useEffect(() => {
-    function handleResize() {
-      if(window.innerWidth<520){
-        setIsMobileView(true)
-      }else if (window.innerWidth>=520) {
-        setIsMobileView(false)
+    const handleResize = () => {
+      if (window.innerWidth < 520) {
+        setIsMobileView(true);
+      } else if (window.innerWidth >= 520) {
+        setIsMobileView(false);
       }
-    }
+    };
 
     window.addEventListener("resize", handleResize);
-
+    
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  });
+  },[]);
 
   const [recommendedPets, setRecommendedPets] = useState([
     {

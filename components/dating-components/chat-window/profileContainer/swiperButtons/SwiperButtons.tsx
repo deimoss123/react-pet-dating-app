@@ -8,6 +8,7 @@ export const SwiperButtons = ({
   next,
   previous,
   likePet,
+  dislikePet
 }: ManageCurrentView) => {
   return (
     <>
@@ -15,7 +16,7 @@ export const SwiperButtons = ({
         <button className={styles.undoButton} onClick={() => previous()}>
           <FaUndo className={styles.return} size={35} color={"#CFCFC4"} />
         </button>
-        <button className={styles.dislikeButton} onClick={() => next()}>
+        <button className={styles.dislikeButton} onClick={() => dislikePet()}>
           <FaTimes className={styles.dislike} size={40} color={"#E3242B"} />
         </button>
         <button className={styles.likeButton} onClick={() => likePet()}>

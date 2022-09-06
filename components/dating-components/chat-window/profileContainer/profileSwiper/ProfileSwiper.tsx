@@ -22,11 +22,6 @@ export interface PetInfo {
   info: string;
 }
 
-export type Foo = {
-  height: number | undefined;
-  width: number | undefined;
-};
-
 export const ProfileSwiper = ({
   id,
   name,
@@ -37,6 +32,7 @@ export const ProfileSwiper = ({
   likePet,
   previous,
   next,
+  dislikePet
 }: RecommendedPet & ManageCurrentView) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPhoto, setCurrentPhoto] = useState(gallery[currentIndex]);
@@ -64,6 +60,10 @@ export const ProfileSwiper = ({
 
   const nextPetAndCloseDescription =()=>{
     next();
+    setIsDescriptionOpen(false)
+  }
+  const dislikePetAndCloseDescription =()=>{
+    dislikePet();
     setIsDescriptionOpen(false)
   }
 
@@ -102,7 +102,7 @@ export const ProfileSwiper = ({
               const swipe = swipePower(offset.x, velocity.x);
 
               if (swipe < -swipeConfidenceThreshold) {
-                nextPetAndCloseDescription();
+                dislikePetAndCloseDescription();
               } else if (swipe > swipeConfidenceThreshold) {
                 likePetAndCloseDescription();
               }
@@ -131,6 +131,7 @@ export const ProfileSwiper = ({
                     setIsDescriptionOpen={setIsDescriptionOpen}
                   />
                   <SwiperButtons
+                    dislikePet={dislikePetAndCloseDescription}
                     next={nextPetAndCloseDescription}
                     previous={previousPetAndCloseDescription}
                     likePet={likePetAndCloseDescription}
