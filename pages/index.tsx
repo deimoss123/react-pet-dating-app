@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
-import Header from "../components/landing-components/Header/Header";
 import AppInfo from "../components/landing-components/AppInfo/AppInfo";
 import LinkTree from "../components/landing-components/LinkTree/LinkTree";
 import MainScreen from "../components/landing-components/MainScreen/MainScreen";
@@ -25,11 +24,6 @@ const Home: NextPage = () => {
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <div className={styles.Home}>
-        {/* <Header
-          setSidebarOpen={setSidebarOpen}
-          sidebarOpen={sidebarOpen}
-          setLoginModalOpen={setLoginModalOpen}
-        /> */}
         <MainScreen
           openSignupModal={setSignupModalOpen}
           setSidebarOpen={setSidebarOpen}
